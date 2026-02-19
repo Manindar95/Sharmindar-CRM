@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/Sharmindar-CRM_logo-name.png" alt="Sharmindar CRM" width="400">
+</p>
+
 # Sharmindar CRM
 
 **A CRM solution for IT and SaaS companies, built through Vibe Coding using the open-source [Krayin CRM](https://krayincrm.com) framework.**
