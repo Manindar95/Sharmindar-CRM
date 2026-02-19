@@ -58,7 +58,7 @@
     @else
         <link
             type="image/png"
-            href="{{ asset('IV-final-logo.png') }}"
+            href="{{ asset('Sharmindar-CRM_logo.png') }}"
             rel="shortcut icon"
             sizes="16x16"
         />

@@ -16,7 +16,7 @@
             @else
                 <img
                     class="h-14 max-w-[200px] object-contain"
-                    src="{{ asset('IV-final-logo-h.png') }}"
+                    src="{{ asset('Sharmindar-CRM_logo-name.png') }}"
                     alt="{{ config('app.name') }}"
                 />
             @endif

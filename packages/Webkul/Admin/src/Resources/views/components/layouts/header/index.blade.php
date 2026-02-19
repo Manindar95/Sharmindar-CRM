@@ -14,7 +14,7 @@
             @else
                 <img
                     class="h-10"
-                    src="{{ asset('IV-final-logo-h.png') }}"
+                    src="{{ asset('Sharmindar-CRM_logo-name.png') }}"
                     id="logo-image"
                     alt="{{ config('app.name') }}"
                 />
@@ -135,9 +135,9 @@
                 return {
                     isDarkMode: {{ request()->cookie('dark_mode') ?? 0 }},
 
-                    logo: "{{ asset('IV-final-logo-h.png') }}",
+                    logo: "{{ asset('Sharmindar-CRM_logo-name.png') }}",
 
-                    dark_logo: "{{ asset('IV-final-logo-h.png') }}",
+                    dark_logo: "{{ asset('Sharmindar-CRM_logo-name.png') }}",
                 };
             },
 
