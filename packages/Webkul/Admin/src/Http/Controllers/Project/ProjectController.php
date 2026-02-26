@@ -47,7 +47,17 @@ class ProjectController extends Controller
             'team_type'         => 'nullable|in:internal,external',
         ]);
 
-        Project::create(request()->all());
+        $data = request()->all();
+
+        // Convert empty strings to null for nullable foreign key and date fields
+        $nullableFields = ['client_id', 'manager_id', 'owner_id', 'start_date', 'end_date', 'expected_end_date', 'actual_end_date'];
+        foreach ($nullableFields as $field) {
+            if (isset($data[$field]) && $data[$field] === '') {
+                $data[$field] = null;
+            }
+        }
+
+        Project::create($data);
 
         session()->flash('success', trans('admin::app.projects.index.create-success'));
 
@@ -80,8 +90,18 @@ class ProjectController extends Controller
             'team_type'         => 'nullable|in:internal,external',
         ]);
 
+        $data = request()->all();
+
+        // Convert empty strings to null for nullable foreign key and date fields
+        $nullableFields = ['client_id', 'manager_id', 'owner_id', 'start_date', 'end_date', 'expected_end_date', 'actual_end_date'];
+        foreach ($nullableFields as $field) {
+            if (isset($data[$field]) && $data[$field] === '') {
+                $data[$field] = null;
+            }
+        }
+
         $project = Project::findOrFail($id);
-        $project->update(request()->all());
+        $project->update($data);
 
         session()->flash('success', trans('admin::app.projects.index.update-success'));
 
