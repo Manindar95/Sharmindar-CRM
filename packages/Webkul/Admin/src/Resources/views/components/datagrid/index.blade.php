@@ -91,6 +91,8 @@
                 return {
                     isLoading: false,
 
+                    showExportDropdown: false,
+
                     available: {
                         id: null,
 
@@ -164,6 +166,13 @@
 
             mounted() {
                 this.boot();
+
+                // Close export dropdown on outside click
+                document.addEventListener('click', (e) => {
+                    if (this.showExportDropdown && !e.target.closest('.relative')) {
+                        this.showExportDropdown = false;
+                    }
+                });
             },
 
             methods: {
@@ -565,6 +574,134 @@
                         this.getDatagridsStorageKey(),
                         JSON.stringify(datagrids)
                     );
+                },
+
+                /**
+                 * Export data as CSV or XLS.
+                 */
+                exportData(format) {
+                    this.showExportDropdown = false;
+
+                    if (! this.available?.records?.length) {
+                        this.$emitter.emit('add-flash', { type: 'warning', message: 'No records to export.' });
+                        return;
+                    }
+
+                    let params = {
+                        export: 1,
+                        format: format,
+                        sort: {},
+                        filters: {},
+                    };
+
+                    if (this.applied.sort.column && this.applied.sort.order) {
+                        params.sort = this.applied.sort;
+                    }
+
+                    this.applied.filters.columns.forEach(column => {
+                        params.filters[column.index] = column.value;
+                    });
+
+                    this.$axios
+                        .get(this.src, {
+                            params,
+                            responseType: 'blob',
+                        })
+                        .then((response) => {
+                            const url = window.URL.createObjectURL(new Blob([response.data]));
+                            const link = document.createElement('a');
+                            link.href = url;
+                            link.setAttribute('download', `export-${Date.now()}.${format}`);
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+
+                            this.$emitter.emit('add-flash', { type: 'success', message: 'Export downloaded successfully.' });
+                        })
+                        .catch(() => {
+                            this.$emitter.emit('add-flash', { type: 'error', message: 'Export failed. Please try again.' });
+                        });
+                },
+
+                /**
+                 * Export data as PDF (client-side generation).
+                 */
+                exportPDF() {
+                    this.showExportDropdown = false;
+
+                    if (! this.available?.records?.length) {
+                        this.$emitter.emit('add-flash', { type: 'warning', message: 'No records to export.' });
+                        return;
+                    }
+
+                    // Load jsPDF from CDN if not loaded
+                    const loadScript = (src) => {
+                        return new Promise((resolve, reject) => {
+                            if (document.querySelector(`script[src="${src}"]`)) {
+                                resolve();
+                                return;
+                            }
+                            const script = document.createElement('script');
+                            script.src = src;
+                            script.onload = resolve;
+                            script.onerror = reject;
+                            document.head.appendChild(script);
+                        });
+                    };
+
+                    Promise.all([
+                        loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'),
+                        loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js'),
+                    ]).then(() => {
+                        const { jsPDF } = window.jspdf;
+                        const doc = new jsPDF('landscape');
+
+                        // Get column headers
+                        const columns = this.available.columns
+                            .filter(col => col.visibility)
+                            .map(col => col.label);
+
+                        // Get column indices
+                        const columnIndices = this.available.columns
+                            .filter(col => col.visibility)
+                            .map(col => col.index);
+
+                        // Get row data
+                        const rows = this.available.records.map(record => {
+                            return columnIndices.map(index => {
+                                let value = record[index];
+                                if (value === null || value === undefined) return '';
+                                // Strip HTML tags
+                                if (typeof value === 'string') {
+                                    value = value.replace(/<[^>]*>/g, '');
+                                }
+                                return String(value);
+                            });
+                        });
+
+                        // Add title
+                        doc.setFontSize(16);
+                        doc.text('Data Export', 14, 15);
+                        doc.setFontSize(10);
+                        doc.text(`Generated: ${new Date().toLocaleString()}`, 14, 22);
+
+                        // Generate table
+                        doc.autoTable({
+                            head: [columns],
+                            body: rows,
+                            startY: 28,
+                            styles: { fontSize: 8, cellPadding: 2 },
+                            headStyles: { fillColor: [37, 99, 235], textColor: 255 },
+                            alternateRowStyles: { fillColor: [245, 247, 250] },
+                            margin: { top: 28 },
+                        });
+
+                        doc.save(`export-${Date.now()}.pdf`);
+
+                        this.$emitter.emit('add-flash', { type: 'success', message: 'PDF exported successfully.' });
+                    }).catch(() => {
+                        this.$emitter.emit('add-flash', { type: 'error', message: 'Failed to load PDF library. Please check your internet connection.' });
+                    });
                 },
             },
         });

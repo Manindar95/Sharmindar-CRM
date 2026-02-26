@@ -66,9 +66,62 @@
         </div>
 
         <!-- Right Toolbar -->
-        <div class="toolbarRight flex gap-x-4">
+        <div class="toolbarRight flex gap-x-4 items-center">
             {{ $toolbarRightBefore }}
-            
+
+            <!-- Export Dropdown -->
+            <div class="relative" v-if="available?.records?.length">
+                <button
+                    type="button"
+                    class="flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 py-1.5 text-sm font-medium text-gray-600 transition-all hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                    @click="showExportDropdown = !showExportDropdown"
+                >
+                    <span class="icon-download text-lg"></span>
+                    @lang('admin::app.export.export')
+                    <span class="icon-down-arrow text-lg" :class="showExportDropdown ? 'rotate-180' : ''"></span>
+                </button>
+
+                <transition
+                    enter-active-class="transition duration-200 ease-out"
+                    enter-from-class="transform scale-95 opacity-0"
+                    enter-to-class="transform scale-100 opacity-100"
+                    leave-active-class="transition duration-150 ease-in"
+                    leave-from-class="transform scale-100 opacity-100"
+                    leave-to-class="transform scale-95 opacity-0"
+                >
+                    <div
+                        v-if="showExportDropdown"
+                        class="absolute right-0 top-full z-[100] mt-1 w-48 origin-top-right rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800"
+                    >
+                        <div class="py-1">
+                            <button
+                                class="flex w-full items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                                @click="exportData('csv')"
+                            >
+                                <span class="icon-download text-lg text-emerald-500"></span>
+                                @lang('admin::app.export.csv')
+                            </button>
+
+                            <button
+                                class="flex w-full items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                                @click="exportData('xls')"
+                            >
+                                <span class="icon-download text-lg text-blue-500"></span>
+                                @lang('admin::app.export.xls')
+                            </button>
+
+                            <button
+                                class="flex w-full items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                                @click="exportPDF()"
+                            >
+                                <span class="icon-download text-lg text-red-500"></span>
+                                Export as PDF
+                            </button>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+
             <!-- Pagination Panel -->
             <x-admin::datagrid.toolbar.pagination>
                 <template #pagination="{
