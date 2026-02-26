@@ -32,7 +32,7 @@
                     <div class="flex items-center gap-x-2.5">
                         {!! view_render_event('admin.settings.roles.edit.save_button.before', ['role' => $role]) !!}
 
-                        @if (bouncer()->hasPermission('settings.user.roles.edit'))
+                        @if (bouncer()->hasPermission('general.settings.user.roles.edit'))
                             <!-- Save button for roles -->
                             <button
                                 type="submit"

@@ -51,7 +51,7 @@ class SourceDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.lead.sources.edit')) {
+        if (bouncer()->hasPermission('general.settings.lead.sources.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -61,7 +61,7 @@ class SourceDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.lead.sources.delete')) {
+        if (bouncer()->hasPermission('general.settings.lead.sources.delete')) {
             $this->addAction([
                 'index'  => 'delete',
                 'icon'   => 'icon-delete',

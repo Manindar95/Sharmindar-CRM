@@ -84,7 +84,7 @@ class TagDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.other_settings.tags.edit')) {
+        if (bouncer()->hasPermission('general.settings.other_settings.tags.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -96,7 +96,7 @@ class TagDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.other_settings.tags.delete')) {
+        if (bouncer()->hasPermission('general.settings.other_settings.tags.delete')) {
             $this->addAction([
                 'index'  => 'delete',
                 'icon'   => 'icon-delete',

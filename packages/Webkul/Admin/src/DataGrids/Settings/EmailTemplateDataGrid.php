@@ -64,7 +64,7 @@ class EmailTemplateDataGrid extends DataGrid
      */
     public function prepareActions()
     {
-        if (bouncer()->hasPermission('settings.automation.email_templates.edit')) {
+        if (bouncer()->hasPermission('general.settings.automation.email_templates.edit')) {
             $this->addAction([
                 'index'  => 'delete',
                 'icon'   => 'icon-edit',
@@ -74,7 +74,7 @@ class EmailTemplateDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.automation.email_templates.delete')) {
+        if (bouncer()->hasPermission('general.settings.automation.email_templates.delete')) {
             $this->addAction([
                 'index'          => 'delete',
                 'icon'           => 'icon-delete',

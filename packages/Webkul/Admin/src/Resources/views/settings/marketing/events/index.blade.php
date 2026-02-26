@@ -25,7 +25,7 @@
                 <div class="flex items-center gap-x-2.5">
                     {!! view_render_event('admin.settings.marketing.events.index.breadcrumbs.after') !!}
 
-                    @if (bouncer()->hasPermission('settings.automation.events.create'))
+                    @if (bouncer()->hasPermission('general.settings.automation.events.create'))
                         <button
                             type="button"
                             class="primary-button"
@@ -75,7 +75,7 @@
                                 :style="`grid-template-columns: repeat(${gridsCount}, minmax(0, 1fr))`"
                             >
                                 <!-- Mass Actions, Title and Created By -->
-                                @if (bouncer()->hasPermission('settings.automation.events.mass_delete'))
+                                @if (bouncer()->hasPermission('general.settings.automation.events.mass_delete'))
                                     <div class="flex select-none items-center gap-16">
                                         <input
                                             type="checkbox"
@@ -107,7 +107,7 @@
 
                                 <!-- Actions -->
                                 <div class="flex justify-end">
-                                    @if (bouncer()->hasPermission('settings.automation.events.edit'))
+                                    @if (bouncer()->hasPermission('general.settings.automation.events.edit'))
                                         <a @click.prevent="actionType = 'edit';edit(record)">
                                             <span
                                                 :class="record.actions.find(action => action.index === 'edit')?.icon"
@@ -117,7 +117,7 @@
                                         </a>
                                     @endif
 
-                                    @if (bouncer()->hasPermission('settings.automation.events.delete'))
+                                    @if (bouncer()->hasPermission('general.settings.automation.events.delete'))
                                         <a @click.prevent="performAction(record.actions.find(action => action.index === 'delete'))">
                                             <span
                                                 :class="record.actions.find(action => action.index === 'delete')?.icon"
@@ -137,7 +137,7 @@
                                 <div class="mb-2 flex items-center justify-between">
                                     <!-- Mass Actions for Mobile Cards -->
                                     <div class="flex w-full items-center justify-between gap-2">
-                                        @if (bouncer()->hasPermission('settings.automation.events.mass_delete'))
+                                        @if (bouncer()->hasPermission('general.settings.automation.events.mass_delete'))
                                             <p v-if="available.massActions.length">
                                                 <label :for="`mass_action_select_record_${record[available.meta.primary_column]}`">
                                                     <input
@@ -160,7 +160,7 @@
                                             class="flex w-full items-center justify-end"
                                             v-if="available.actions.length"
                                         >
-                                            @if (bouncer()->hasPermission('settings.automation.events.edit'))
+                                            @if (bouncer()->hasPermission('general.settings.automation.events.edit'))
                                                 <a @click.prevent="actionType = 'edit';edit(record)">
                                                     <span
                                                         :class="record.actions.find(action => action.index === 'edit')?.icon"
@@ -170,7 +170,7 @@
                                                 </a>
                                             @endif
 
-                                            @if (bouncer()->hasPermission('settings.automation.events.delete'))
+                                            @if (bouncer()->hasPermission('general.settings.automation.events.delete'))
                                                 <a @click.prevent="performAction(record.actions.find(action => action.index === 'delete'))">
                                                     <span
                                                         :class="record.actions.find(action => action.index === 'delete')?.icon"

@@ -53,7 +53,7 @@ class WorkflowDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.automation.workflows.edit')) {
+        if (bouncer()->hasPermission('general.settings.automation.workflows.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -63,7 +63,7 @@ class WorkflowDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.automation.workflows.delete')) {
+        if (bouncer()->hasPermission('general.settings.automation.workflows.delete')) {
             $this->addAction([
                 'index'        => 'delete',
                 'icon'         => 'icon-delete',

@@ -61,7 +61,7 @@ class GroupDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.user.groups.edit')) {
+        if (bouncer()->hasPermission('general.settings.user.groups.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -71,7 +71,7 @@ class GroupDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.user.groups.delete')) {
+        if (bouncer()->hasPermission('general.settings.user.groups.delete')) {
             $this->addAction([
                 'index'  => 'delete',
                 'icon'   => 'icon-delete',

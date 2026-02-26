@@ -1,13 +1,13 @@
 <div>
     @if (bouncer()->hasPermission('leads.create')
         || bouncer()->hasPermission('quotes.create')
-        || bouncer()->hasPermission('mail.create')
+        || bouncer()->hasPermission('general.mail.create')
         || bouncer()->hasPermission('contacts.persons.create')
         || bouncer()->hasPermission('contacts.organizations.create')
         || bouncer()->hasPermission('products.create')
-        || bouncer()->hasPermission('settings.automation.attributes.create')
-        || bouncer()->hasPermission('settings.user.roles.create')
-        || bouncer()->hasPermission('settings.user.users.create')
+        || bouncer()->hasPermission('general.settings.automation.attributes.create')
+        || bouncer()->hasPermission('general.settings.user.roles.create')
+        || bouncer()->hasPermission('general.settings.user.users.create')
     )
         <x-admin::dropdown position="bottom-right">
             <x-slot:toggle>
@@ -48,7 +48,7 @@
                         @endif
 
                         <!-- Link to send new Mail-->
-                        @if (bouncer()->hasPermission('mail.create'))
+                        @if (bouncer()->hasPermission('general.mail.create'))
                             <div class="rounded-lg bg-white p-2 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-950">
                                 <a href="{{ route('admin.mail.index', ['route' => 'inbox', 'openModal' => 'true']) }}">
                                     <div class="flex flex-col gap-1">
@@ -100,7 +100,7 @@
                         @endif
 
                         <!-- Link to create new Attributes -->
-                        @if (bouncer()->hasPermission('settings.automation.attributes.create'))
+                        @if (bouncer()->hasPermission('general.settings.automation.attributes.create'))
                             <div class="rounded-lg bg-white p-2 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-950">
                                 <a href="{{ route('admin.settings.attributes.create') }}">
                                     <div class="flex flex-col gap-1">
@@ -113,7 +113,7 @@
                         @endif
 
                         <!-- Link to create new Role -->
-                        @if (bouncer()->hasPermission('settings.user.roles.create'))
+                        @if (bouncer()->hasPermission('general.settings.user.roles.create'))
                             <div class="rounded-lg bg-white p-2 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-950">
                                 <a href="{{ route('admin.settings.roles.create') }}">
                                     <div class="flex flex-col gap-1">
@@ -126,7 +126,7 @@
                         @endif
 
                         <!-- Link to create new User-->
-                        @if (bouncer()->hasPermission('settings.user.users.create'))
+                        @if (bouncer()->hasPermission('general.settings.user.users.create'))
                             <div class="rounded-lg bg-white p-2 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-950">
                                 <a href="{{ route('admin.settings.users.index', ['action' => 'create']) }}">
                                     <div class="flex flex-col gap-1">

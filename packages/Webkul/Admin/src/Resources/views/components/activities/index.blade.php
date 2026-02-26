@@ -298,7 +298,7 @@
                                                 </template>
 
                                                 <template v-else>
-                                                    @if (bouncer()->hasPermission('mail.view'))
+                                                    @if (bouncer()->hasPermission('general.mail.view'))
                                                         <x-admin::dropdown.menu.item>
                                                             <a
                                                                 :href="'{{ route('admin.mail.view', ['route' => 'replaceFolder', 'id' => 'replaceMailId']) }}'.replace('replaceFolder', activity.additional.folders[0]).replace('replaceMailId', activity.id)"

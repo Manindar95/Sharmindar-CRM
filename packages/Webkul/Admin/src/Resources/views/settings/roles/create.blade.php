@@ -27,7 +27,7 @@
                     <div class="flex items-center gap-x-2.5">
                         {!! view_render_event('admin.settings.roles.create.create_button.before') !!}
 
-                        @if (bouncer()->hasPermission('settings.user.roles.create'))
+                        @if (bouncer()->hasPermission('general.settings.user.roles.create'))
                             <!-- Create button for Roles -->
                             <button
                                 type="submit"

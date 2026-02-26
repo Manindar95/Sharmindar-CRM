@@ -70,7 +70,7 @@ class PipelineDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.lead.pipelines.edit')) {
+        if (bouncer()->hasPermission('general.settings.lead.pipelines.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -80,7 +80,7 @@ class PipelineDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.lead.pipelines.delete')) {
+        if (bouncer()->hasPermission('general.settings.lead.pipelines.delete')) {
             $this->addAction([
                 'index'  => 'delete',
                 'icon'   => 'icon-delete',

@@ -25,7 +25,7 @@
                 <div class="flex items-center gap-x-2.5">
                     {!! view_render_event('admin.settings.groups.index.breadcrumbs.after') !!}
 
-                    @if (bouncer()->hasPermission('settings.user.groups.create'))
+                    @if (bouncer()->hasPermission('general.settings.user.groups.create'))
                         <button
                             type="button"
                             class="primary-button"

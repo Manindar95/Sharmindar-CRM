@@ -24,7 +24,7 @@
                 <div class="flex items-center gap-x-2.5">
                     {!! view_render_event('admin.settings.attributes.index.create_button.before') !!}
 
-                    @if (bouncer()->hasPermission('settings.automation.attributes.create'))
+                    @if (bouncer()->hasPermission('general.settings.automation.attributes.create'))
                         <a
                             href="{{ route('admin.settings.attributes.create') }}"
                             class="primary-button"

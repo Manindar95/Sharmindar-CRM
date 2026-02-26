@@ -119,7 +119,7 @@ class AttributeDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.automation.attributes.edit')) {
+        if (bouncer()->hasPermission('general.settings.automation.attributes.edit')) {
             $this->addAction([
                 'icon'   => 'icon-edit',
                 'title'  => trans('admin::app.settings.attributes.index.datagrid.edit'),
@@ -128,7 +128,7 @@ class AttributeDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.automation.attributes.delete')) {
+        if (bouncer()->hasPermission('general.settings.automation.attributes.delete')) {
             $this->addAction([
                 'icon'   => 'icon-delete',
                 'title'  => trans('admin::app.settings.attributes.index.datagrid.delete'),

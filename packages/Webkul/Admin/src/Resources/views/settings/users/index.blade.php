@@ -18,7 +18,7 @@
                 {!! view_render_event('admin.settings.users.index.create_button.before') !!}
 
                 <!-- Create button for User -->
-                @if (bouncer()->hasPermission('settings.user.users.create'))
+                @if (bouncer()->hasPermission('general.settings.user.users.create'))
                     <div class="flex items-center gap-x-2.5">
                         <button
                             type="button"

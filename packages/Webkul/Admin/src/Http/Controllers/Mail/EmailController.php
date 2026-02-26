@@ -45,7 +45,7 @@ class EmailController extends Controller
             return redirect()->route('admin.mail.index', ['route' => SupportedFolderEnum::INBOX->value]);
         }
 
-        if (! bouncer()->hasPermission('mail.'.$route)) {
+        if (! bouncer()->hasPermission('general.mail.'.$route)) {
             abort(401, trans('admin::app.mail.unauthorized'));
         }
 

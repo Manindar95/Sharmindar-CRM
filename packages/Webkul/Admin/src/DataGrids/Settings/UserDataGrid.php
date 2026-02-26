@@ -94,7 +94,7 @@ class UserDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.user.users.edit')) {
+        if (bouncer()->hasPermission('general.settings.user.users.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -104,7 +104,7 @@ class UserDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.user.users.delete')) {
+        if (bouncer()->hasPermission('general.settings.user.users.delete')) {
             $this->addAction([
                 'index'  => 'delete',
                 'icon'   => 'icon-delete',

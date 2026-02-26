@@ -40,7 +40,7 @@
                     <div class="flex items-center gap-x-2.5">
                         {!! view_render_event('admin.settings.attributes.edit.edit_button.before', ['attribute' => $attribute]) !!}
 
-                        @if (bouncer()->hasPermission('settings.automation.attributes.edit'))
+                        @if (bouncer()->hasPermission('general.settings.automation.attributes.edit'))
                             <button
                                 type="submit"
                                 class="primary-button"

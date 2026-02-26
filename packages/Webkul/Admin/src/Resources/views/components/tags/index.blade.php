@@ -82,7 +82,7 @@
                                             @{{ tag.name }}
                                         </li>
 
-                                        @if (bouncer()->hasPermission('settings.other_settings.tags.create'))
+                                        @if (bouncer()->hasPermission('general.settings.other_settings.tags.create'))
                                             <template v-if="! searchedTags.length && ! isSearching">
                                                 <li
                                                     class="cursor-pointer rounded-sm bg-gray-100 px-5 py-2 text-sm text-gray-800 dark:bg-gray-950 dark:text-white"
@@ -126,7 +126,7 @@
 
                                         <!-- Action -->
                                         <div class="flex items-center gap-1">
-                                            @if (bouncer()->hasPermission('settings.other_settings.tags.edit'))
+                                            @if (bouncer()->hasPermission('general.settings.other_settings.tags.edit'))
                                                 <x-admin::dropdown position="bottom-right">
                                                     <x-slot:toggle>
                                                         <button class="flex cursor-pointer items-center gap-1 rounded border border-gray-200 px-2 py-0.5 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400 dark:focus:border-gray-400">
@@ -159,7 +159,7 @@
                                                 </x-admin::dropdown>
                                             @endif
 
-                                            @if (bouncer()->hasPermission('settings.other_settings.tags.delete'))
+                                            @if (bouncer()->hasPermission('general.settings.other_settings.tags.delete'))
                                                 <div class="flex items-center">
                                                     <span
                                                         class="icon-cross-large flex cursor-pointer rounded-md p-1 text-xl text-gray-600 transition-all hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-800"

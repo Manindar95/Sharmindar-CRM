@@ -72,7 +72,7 @@ class CampaignDatagrid extends DataGrid
      */
     public function prepareActions()
     {
-        if (bouncer()->hasPermission('settings.automation.campaigns.edit')) {
+        if (bouncer()->hasPermission('general.settings.automation.campaigns.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -82,7 +82,7 @@ class CampaignDatagrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.automation.campaigns.delete')) {
+        if (bouncer()->hasPermission('general.settings.automation.campaigns.delete')) {
             $this->addAction([
                 'index'          => 'delete',
                 'icon'           => 'icon-delete',
@@ -98,7 +98,7 @@ class CampaignDatagrid extends DataGrid
      */
     public function prepareMassActions(): void
     {
-        if (bouncer()->hasPermission('settings.automation.campaigns.mass_delete')) {
+        if (bouncer()->hasPermission('general.settings.automation.campaigns.mass_delete')) {
             $this->addMassAction([
                 'icon'   => 'icon-delete',
                 'title'  => trans('admin::app.settings.marketing.campaigns.index.datagrid.delete'),

@@ -81,7 +81,7 @@ class RoleDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.user.roles.edit')) {
+        if (bouncer()->hasPermission('general.settings.user.roles.edit')) {
             $this->addAction([
                 'icon'   => 'icon-edit',
                 'title'  => trans('admin::app.settings.roles.index.datagrid.edit'),
@@ -90,7 +90,7 @@ class RoleDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.user.roles.delete')) {
+        if (bouncer()->hasPermission('general.settings.user.roles.delete')) {
             $this->addAction([
                 'icon'   => 'icon-delete',
                 'title'  => trans('admin::app.settings.roles.index.datagrid.delete'),

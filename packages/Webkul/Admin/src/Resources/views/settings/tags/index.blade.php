@@ -24,7 +24,7 @@
                 {!! view_render_event('admin.settings.tags.index.create_button.before') !!}
                 
                 <!-- Create button for Tags -->
-                @if (bouncer()->hasPermission('settings.other_settings.tags.create'))
+                @if (bouncer()->hasPermission('general.settings.other_settings.tags.create'))
                     <div class="flex items-center gap-x-2.5">
                         <button
                             type="button"

@@ -24,7 +24,7 @@
                 <div class="flex items-center gap-x-2.5">
                     {!! view_render_event('admin.settings.email_template.index.create_button.before') !!}
 
-                    @if (bouncer()->hasPermission('settings.automation.email_templates.create'))
+                    @if (bouncer()->hasPermission('general.settings.automation.email_templates.create'))
                         <a
                             href="{{ route('admin.settings.email_templates.create') }}"
                             class="primary-button"

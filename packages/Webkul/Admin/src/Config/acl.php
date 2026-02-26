@@ -67,52 +67,52 @@ return [
         'route' => ['admin.quotes.delete', 'admin.quotes.mass_delete'],
         'sort'  => 4,
     ], [
-        'key'   => 'mail',
+        'key'   => 'general.mail',
         'name'  => 'admin::app.acl.mail',
         'route' => 'admin.mail.index',
         'sort'  => 4,
     ], [
-        'key'   => 'mail.inbox',
+        'key'   => 'general.mail.inbox',
         'name'  => 'admin::app.acl.inbox',
         'route' => 'admin.mail.index',
         'sort'  => 1,
     ], [
-        'key'   => 'mail.draft',
+        'key'   => 'general.mail.draft',
         'name'  => 'admin::app.acl.draft',
         'route' => 'admin.mail.index',
         'sort'  => 2,
     ], [
-        'key'   => 'mail.outbox',
+        'key'   => 'general.mail.outbox',
         'name'  => 'admin::app.acl.outbox',
         'route' => 'admin.mail.index',
         'sort'  => 3,
     ], [
-        'key'   => 'mail.sent',
+        'key'   => 'general.mail.sent',
         'name'  => 'admin::app.acl.sent',
         'route' => 'admin.mail.index',
         'sort'  => 4,
     ], [
-        'key'   => 'mail.trash',
+        'key'   => 'general.mail.trash',
         'name'  => 'admin::app.acl.trash',
         'route' => 'admin.mail.index',
         'sort'  => 5,
     ], [
-        'key'   => 'mail.compose',
+        'key'   => 'general.mail.compose',
         'name'  => 'admin::app.acl.create',
         'route' => ['admin.mail.store'],
         'sort'  => 6,
     ], [
-        'key'   => 'mail.view',
+        'key'   => 'general.mail.view',
         'name'  => 'admin::app.acl.view',
         'route' => 'admin.mail.view',
         'sort'  => 7,
     ], [
-        'key'   => 'mail.edit',
+        'key'   => 'general.mail.edit',
         'name'  => 'admin::app.acl.edit',
         'route' => 'admin.mail.update',
         'sort'  => 8,
     ], [
-        'key'   => 'mail.delete',
+        'key'   => 'general.mail.delete',
         'name'  => 'admin::app.acl.delete',
         'route' => ['admin.mail.delete', 'admin.mail.mass_delete'],
         'sort'  => 9,
@@ -217,12 +217,12 @@ return [
         'route' => 'admin.products.view',
         'sort'  => 3,
     ], [
-        'key'   => 'settings.settings',
+        'key'   => 'general.settings.settings',
         'name'  => 'admin::app.acl.settings',
         'route' => 'admin.settings.index',
         'sort'  => 3,
     ], [
-        'key'   => 'settings.user',
+        'key'   => 'general.settings.user',
         'name'  => 'admin::app.acl.user',
         'route' => ['admin.settings.groups.index', 'admin.settings.roles.index', 'admin.settings.users.index'],
         'sort'  => 1,
@@ -287,7 +287,7 @@ return [
         'route' => ['admin.settings.users.delete', 'admin.settings.users.mass_delete'],
         'sort'  => 3,
     ], [
-        'key'   => 'settings.lead',
+        'key'   => 'general.settings.lead',
         'name'  => 'admin::app.acl.lead',
         'route' => ['admin.settings.pipelines.index', 'admin.settings.sources.index', 'admin.settings.types.index'],
         'sort'  => 2,
@@ -352,7 +352,7 @@ return [
         'route' => 'admin.settings.types.delete',
         'sort'  => 3,
     ], [
-        'key'   => 'settings.automation',
+        'key'   => 'general.settings.automation',
         'name'  => 'admin::app.acl.automation',
         'route' => ['admin.settings.attributes.index', 'admin.settings.email_templates.index', 'admin.settings.workflows.index'],
         'sort'  => 3,
@@ -477,7 +477,7 @@ return [
         'route' => 'admin.settings.webhooks.delete',
         'sort'  => 3,
     ], [
-        'key'   => 'settings.other_settings',
+        'key'   => 'general.settings.other_settings',
         'name'  => 'admin::app.acl.other-settings',
         'route' => 'admin.settings.tags.index',
         'sort'  => 4,
@@ -503,7 +503,7 @@ return [
         'sort'  => 2,
     ],
     [
-        'key'   => 'settings.data_transfer',
+        'key'   => 'general.settings.data_transfer',
         'name'  => 'admin::app.acl.data-transfer',
         'route' => 'admin.settings.data_transfer.imports.index',
         'sort'  => 10,
@@ -593,7 +593,7 @@ return [
         'route' => 'admin.timesheets.index',
         'sort'  => 3,
     ], [
-        'key'   => 'configuration',
+        'key'   => 'general.configuration',
         'name'  => 'admin::app.acl.configuration',
         'route' => 'admin.configuration.index',
         'sort'  => 4,

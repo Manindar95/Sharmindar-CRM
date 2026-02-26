@@ -142,7 +142,7 @@ class EmailDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('mail.view')) {
+        if (bouncer()->hasPermission('general.mail.view')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => request('route') == 'draft'
@@ -161,7 +161,7 @@ class EmailDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('mail.delete')) {
+        if (bouncer()->hasPermission('general.mail.delete')) {
             $this->addAction([
                 'index'        => 'delete',
                 'icon'         => 'icon-delete',

@@ -72,7 +72,7 @@ class EventDataGrid extends DataGrid
      */
     public function prepareActions()
     {
-        if (bouncer()->hasPermission('settings.automation.events.edit')) {
+        if (bouncer()->hasPermission('general.settings.automation.events.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -82,7 +82,7 @@ class EventDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.automation.events.delete')) {
+        if (bouncer()->hasPermission('general.settings.automation.events.delete')) {
             $this->addAction([
                 'index'          => 'delete',
                 'icon'           => 'icon-delete',
@@ -98,7 +98,7 @@ class EventDataGrid extends DataGrid
      */
     public function prepareMassActions(): void
     {
-        if (bouncer()->hasPermission('settings.automation.events.delete')) {
+        if (bouncer()->hasPermission('general.settings.automation.events.delete')) {
             $this->addMassAction([
                 'icon'   => 'icon-delete',
                 'title'  => trans('admin::app.settings.marketing.events.index.datagrid.delete'),

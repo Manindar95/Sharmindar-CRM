@@ -51,7 +51,7 @@ class TypeDataGrid extends DataGrid
      */
     public function prepareActions(): void
     {
-        if (bouncer()->hasPermission('settings.lead.types.edit')) {
+        if (bouncer()->hasPermission('general.settings.lead.types.edit')) {
             $this->addAction([
                 'index'  => 'edit',
                 'icon'   => 'icon-edit',
@@ -61,7 +61,7 @@ class TypeDataGrid extends DataGrid
             ]);
         }
 
-        if (bouncer()->hasPermission('settings.lead.types.delete')) {
+        if (bouncer()->hasPermission('general.settings.lead.types.delete')) {
             $this->addAction([
                 'index'  => 'delete',
                 'icon'   => 'icon-delete',
