@@ -21,6 +21,7 @@ use Webkul\Admin\Http\Controllers\Settings\Warehouse\WarehouseController;
 use Webkul\Admin\Http\Controllers\Settings\WebFormController;
 use Webkul\Admin\Http\Controllers\Settings\WebhookController;
 use Webkul\Admin\Http\Controllers\Settings\WorkflowController;
+use Webkul\Admin\Http\Controllers\Setting\AuditLogController;
 
 /**
  * Settings group routes.
@@ -299,6 +300,13 @@ Route::prefix('settings')->group(function () {
         Route::put('edit/{id}', 'update')->name('admin.settings.email_templates.update');
 
         Route::delete('{id}', 'destroy')->name('admin.settings.email_templates.delete');
+    });
+
+    /**
+     * Audit Logs Routes.
+     */
+    Route::controller(AuditLogController::class)->prefix('audit-logs')->group(function () {
+        Route::get('', 'index')->name('admin.settings.audit_logs.index');
     });
 
     /**

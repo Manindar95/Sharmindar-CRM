@@ -11,12 +11,17 @@ class ProjectDataGrid extends DataGrid
     public function prepareQueryBuilder(): Builder
     {
         return DB::table('projects')
+            ->leftJoin('persons', 'projects.client_id', '=', 'persons.id')
+            ->leftJoin('users as managers', 'projects.manager_id', '=', 'managers.id')
             ->select(
                 'projects.id',
                 'projects.name',
+                'persons.name as client_name',
                 'projects.status',
                 'projects.start_date',
                 'projects.end_date',
+                'projects.expected_end_date',
+                'managers.name as manager_name',
                 'projects.created_at',
             );
     }
@@ -34,6 +39,15 @@ class ProjectDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'name',
             'label'      => trans('admin::app.projects.index.datagrid.name'),
+            'type'       => 'string',
+            'sortable'   => true,
+            'searchable' => true,
+            'filterable' => true,
+        ]);
+
+        $this->addColumn([
+            'index'      => 'client_name',
+            'label'      => trans('admin::app.projects.create.client'),
             'type'       => 'string',
             'sortable'   => true,
             'searchable' => true,
@@ -68,12 +82,21 @@ class ProjectDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'      => 'end_date',
-            'label'      => trans('admin::app.projects.index.datagrid.end-date'),
+            'index'      => 'expected_end_date',
+            'label'      => trans('admin::app.projects.create.expected-end-date'),
             'type'       => 'date',
             'sortable'   => true,
             'filterable' => true,
-            'closure'    => fn ($row) => $row->end_date ?? '--',
+            'closure'    => fn ($row) => $row->expected_end_date ?? '--',
+        ]);
+
+        $this->addColumn([
+            'index'      => 'manager_name',
+            'label'      => trans('admin::app.projects.create.manager'),
+            'type'       => 'string',
+            'sortable'   => true,
+            'searchable' => true,
+            'filterable' => true,
         ]);
     }
 

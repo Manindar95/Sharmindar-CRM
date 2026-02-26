@@ -36,6 +36,13 @@
             @include('admin::components.layouts.header.mobile.mega-search')
         </div>
         
+        <!-- Notifications -->
+        <v-notifications>
+            <div class="flex">
+                <span class="icon-notification p-1.5 rounded-md text-2xl cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-950"></span>
+            </div>
+        </v-notifications>
+
         <!-- Dark mode -->
         <v-dark>
             <div class="flex">
@@ -128,6 +135,135 @@
     </script>
 
     <script type="module">
+    <script
+        type="text/x-template"
+        id="v-notifications-template"
+    >
+        <x-admin::dropdown position="bottom-{{ in_array(app()->getLocale(), ['fa', 'ar']) ? 'left' : 'right' }}">
+            <x-slot:toggle>
+                <div class="flex relative">
+                    <span
+                        class="icon-notification p-1.5 rounded-md text-2xl cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-950"
+                    ></span>
+
+                    <span
+                        class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] text-white"
+                        v-if="unreadCount"
+                    >
+                        @{{ unreadCount }}
+                    </span>
+                </div>
+            </x-slot>
+
+            <x-slot:content class="mt-2 border-t-0 !p-0 min-w-[300px]">
+                <div class="flex items-center justify-between border-b border-gray-200 p-4 dark:border-gray-800">
+                    <p class="text-sm font-bold text-gray-800 dark:text-white">
+                        @lang('admin::app.notifications.title')
+                    </p>
+
+                    <span
+                        class="cursor-pointer text-xs text-brandColor hover:underline"
+                        v-if="unreadCount"
+                        @click="markAllRead"
+                    >
+                        @lang('admin::app.notifications.mark-all-read')
+                    </span>
+                </div>
+
+                <div class="grid max-h-[400px] overflow-y-auto">
+                    <template v-if="notifications.length">
+                        <div
+                            class="flex flex-col gap-1 border-b border-gray-100 p-4 last:border-0 dark:border-gray-800 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-950"
+                            v-for="notification in notifications"
+                            @click="redirect(notification)"
+                        >
+                            <p class="text-xs font-bold text-gray-800 dark:text-white">
+                                @{{ notification.data.title }}
+                            </p>
+
+                            <p class="text-xs text-gray-500">
+                                @{{ notification.data.message }}
+                            </p>
+
+                            <p class="text-[10px] text-gray-400">
+                                @{{ notification.created_at_relative }}
+                            </p>
+                        </div>
+                    </template>
+
+                    <template v-else>
+                        <div class="p-8 text-center text-gray-500">
+                            @lang('admin::app.notifications.no-record')
+                        </div>
+                    </template>
+                </div>
+
+                <div class="border-t border-gray-200 p-3 text-center dark:border-gray-800">
+                    <a
+                        :href="allNotificationUrl"
+                        class="text-xs font-bold text-brandColor hover:underline"
+                    >
+                        @lang('admin::app.notifications.view-all')
+                    </a>
+                </div>
+            </x-slot>
+        </x-admin::dropdown>
+    </script>
+
+    <script type="module">
+        app.component('v-notifications', {
+            template: '#v-notifications-template',
+
+            data() {
+                return {
+                    notifications: [],
+
+                    unreadCount: 0,
+
+                    allNotificationUrl: '',
+                };
+            },
+
+            created() {
+                this.getNotifications();
+
+                // Poll every 30 seconds
+                setInterval(() => {
+                    this.getNotifications();
+                }, 30000);
+            },
+
+            methods: {
+                getNotifications() {
+                    this.$axios.get("{{ route('admin.settings.notifications.get') }}", {
+                        params: { limit: 5 }
+                    })
+                        .then(response => {
+                            this.notifications = response.data.data.notifications;
+                            this.unreadCount = response.data.data.unread_count;
+                            this.allNotificationUrl = response.data.data.all_notification;
+                        })
+                        .catch(error => {});
+                },
+
+                markAllRead() {
+                    this.$axios.post("{{ route('admin.settings.notifications.mark_all_read') }}")
+                        .then(response => {
+                            this.unreadCount = 0;
+                            this.notifications.forEach(notification => {
+                                notification.read_at = new Date().toISOString();
+                            });
+                        })
+                        .catch(error => {});
+                },
+
+                redirect(notification) {
+                    // Placeholder for redirect logic based on type
+                    window.location.href = "{{ route('admin.settings.notifications.index') }}";
+                }
+            },
+        });
+
         app.component('v-dark', {
             template: '#v-dark-template',
 

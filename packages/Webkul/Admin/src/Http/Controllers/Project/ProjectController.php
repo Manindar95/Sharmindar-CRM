@@ -7,6 +7,8 @@ use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Project\ProjectDataGrid;
 use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Admin\Models\Project;
+use Webkul\Contact\Models\Person;
+use Webkul\User\Models\User;
 
 class ProjectController extends Controller
 {
@@ -21,19 +23,30 @@ class ProjectController extends Controller
 
     public function create(): View
     {
-        return view('admin::projects.create');
+        $persons = Person::all();
+        $users = User::all();
+
+        return view('admin::projects.create', compact('persons', 'users'));
     }
 
     public function store(): \Illuminate\Http\RedirectResponse
     {
         $this->validate(request(), [
-            'name'       => 'required|string|max:255',
-            'status'     => 'required|in:not_started,in_progress,on_hold,completed',
-            'start_date' => 'nullable|date',
-            'end_date'   => 'nullable|date|after_or_equal:start_date',
+            'name'              => 'required|string|max:255',
+            'client_id'         => 'nullable|exists:persons,id',
+            'project_type'      => 'nullable|string',
+            'status'            => 'required|in:not_started,in_progress,on_hold,completed',
+            'start_date'        => 'nullable|date',
+            'end_date'          => 'nullable|date|after_or_equal:start_date',
+            'expected_end_date' => 'nullable|date|after_or_equal:start_date',
+            'actual_end_date'   => 'nullable|date|after_or_equal:start_date',
+            'manager_id'        => 'nullable|exists:users,id',
+            'owner_id'          => 'nullable|exists:users,id',
+            'priority'          => 'nullable|in:low,medium,high',
+            'team_type'         => 'nullable|in:internal,external',
         ]);
 
-        Project::create(request()->only(['name', 'description', 'status', 'start_date', 'end_date']));
+        Project::create(request()->all());
 
         session()->flash('success', trans('admin::app.projects.index.create-success'));
 
@@ -43,21 +56,31 @@ class ProjectController extends Controller
     public function edit(int $id): View
     {
         $project = Project::findOrFail($id);
+        $persons = Person::all();
+        $users = User::all();
 
-        return view('admin::projects.edit', compact('project'));
+        return view('admin::projects.edit', compact('project', 'persons', 'users'));
     }
 
     public function update(int $id): \Illuminate\Http\RedirectResponse
     {
         $this->validate(request(), [
-            'name'       => 'required|string|max:255',
-            'status'     => 'required|in:not_started,in_progress,on_hold,completed',
-            'start_date' => 'nullable|date',
-            'end_date'   => 'nullable|date|after_or_equal:start_date',
+            'name'              => 'required|string|max:255',
+            'client_id'         => 'nullable|exists:persons,id',
+            'project_type'      => 'nullable|string',
+            'status'            => 'required|in:not_started,in_progress,on_hold,completed',
+            'start_date'        => 'nullable|date',
+            'end_date'          => 'nullable|date|after_or_equal:start_date',
+            'expected_end_date' => 'nullable|date|after_or_equal:start_date',
+            'actual_end_date'   => 'nullable|date|after_or_equal:start_date',
+            'manager_id'        => 'nullable|exists:users,id',
+            'owner_id'          => 'nullable|exists:users,id',
+            'priority'          => 'nullable|in:low,medium,high',
+            'team_type'         => 'nullable|in:internal,external',
         ]);
 
         $project = Project::findOrFail($id);
-        $project->update(request()->only(['name', 'description', 'status', 'start_date', 'end_date']));
+        $project->update(request()->all());
 
         session()->flash('success', trans('admin::app.projects.index.update-success'));
 

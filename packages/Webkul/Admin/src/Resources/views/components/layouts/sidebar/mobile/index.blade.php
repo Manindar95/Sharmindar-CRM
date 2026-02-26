@@ -50,9 +50,9 @@
                                 data-menu-key="{{ $menuKey }}"
                             >
                                 <a
-                                    href="{{ ! in_array($menuItem->getKey(), ['settings', 'configuration']) && $menuItem->haveChildren() ? 'javascript:void(0)' : $menuItem->getUrl() }}"
+                                    href="{{ $menuItem->haveChildren() ? 'javascript:void(0)' : $menuItem->getUrl() }}"
                                     class="menu-link flex items-center justify-between rounded-lg p-2 transition-colors duration-200"
-                                    @if ($menuItem->haveChildren() && !in_array($menuKey, ['settings', 'configuration']))
+                                    @if ($menuItem->haveChildren())
                                         @click.prevent="toggleMenu('{{ $menuKey }}')"
                                     @endif
                                     :class="{ 'bg-brandColor text-white': activeMenu === '{{ $menuKey }}' || {{ $isMenuActive ? 'true' : 'false' }}, 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-950': !(activeMenu === '{{ $menuKey }}' || {{ $isMenuActive ? 'true' : 'false' }}) }"
@@ -71,7 +71,7 @@
                                     @endif
                                 </a>
 
-                                @if ($menuItem->haveChildren() && !in_array($menuKey, ['settings', 'configuration']))
+                                @if ($menuItem->haveChildren())
                                     <div
                                         class="submenu ml-1 mt-1 overflow-hidden rounded-b-lg border-l-2 transition-all duration-300 dark:border-gray-700"
                                         :class="{ 'max-h-[500px] py-2 border-l-brandColor bg-gray-50 dark:bg-gray-900': activeMenu === '{{ $menuKey }}' || {{ $hasActiveChild ? 'true' : 'false' }}, 'max-h-0 py-0 border-transparent bg-transparent': activeMenu !== '{{ $menuKey }}' && !{{ $hasActiveChild ? 'true' : 'false' }} }"

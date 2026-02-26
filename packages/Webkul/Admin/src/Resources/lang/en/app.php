@@ -4,7 +4,7 @@ return [
     'acl' => [
         'leads'           => 'Leads',
         'lead'            => 'Lead',
-        'quotes'          => 'Quotes',
+        'quotes'          => 'Statement of Works',
         'mail'            => 'Mail',
         'inbox'           => 'Inbox',
         'draft'           => 'Draft',
@@ -42,8 +42,9 @@ return [
         'data-transfer'   => 'Data Transfer',
         'imports'         => 'Imports',
         'import'          => 'Import',
-        'event'           => 'Event',
         'campaigns'       => 'Campaigns',
+        'payments'        => 'Payments',
+        'proposals'       => 'Proposals',
     ],
 
     'users' => [
@@ -429,7 +430,7 @@ return [
 
     'quotes' => [
         'index' => [
-            'title'          => 'Quotes',
+            'title'          => 'Statement of Works',
             'create-btn'     => 'Create Quote',
             'create-success' => 'Quote created successfully.',
             'update-success' => 'Quote updated successfully.',
@@ -471,7 +472,7 @@ return [
                 'sub-total'        => 'Sub Total',
                 'subject'          => 'Subject',
                 'tax'              => 'Tax',
-                'title'            => 'Quote',
+                'title'            => 'Statement of Work',
             ],
         ],
 
@@ -741,127 +742,6 @@ return [
                 'add-more'   => 'Add More',
                 'save'       => 'Save',
             ],
-        ],
-    ],
-
-    'projects' => [
-        'index' => [
-            'title'          => 'Projects',
-            'create-btn'     => 'Create Project',
-            'create-success' => 'Project created successfully.',
-            'update-success' => 'Project updated successfully.',
-            'delete-success' => 'Project deleted successfully.',
-            'delete-failed'  => 'Project can not be deleted.',
-
-            'datagrid' => [
-                'id'         => 'ID',
-                'name'       => 'Name',
-                'status'     => 'Status',
-                'start-date' => 'Start Date',
-                'end-date'   => 'End Date',
-                'edit'       => 'Edit',
-                'delete'     => 'Delete',
-            ],
-        ],
-
-        'create' => [
-            'title'       => 'Create Project',
-            'save-btn'    => 'Save Project',
-            'back-btn'    => 'Back',
-            'name'        => 'Name',
-            'description' => 'Description',
-            'status'      => 'Status',
-            'start-date'  => 'Start Date',
-            'end-date'    => 'End Date',
-        ],
-
-        'edit' => [
-            'title'    => 'Edit Project',
-            'save-btn' => 'Save Project',
-            'back-btn' => 'Back',
-        ],
-    ],
-
-    'tasks' => [
-        'index' => [
-            'title'          => 'Tasks',
-            'create-btn'     => 'Create Task',
-            'create-success' => 'Task created successfully.',
-            'update-success' => 'Task updated successfully.',
-            'delete-success' => 'Task deleted successfully.',
-            'delete-failed'  => 'Task can not be deleted.',
-
-            'datagrid' => [
-                'id'          => 'ID',
-                'title'       => 'Title',
-                'project'     => 'Project',
-                'status'      => 'Status',
-                'priority'    => 'Priority',
-                'due-date'    => 'Due Date',
-                'assigned-to' => 'Assigned To',
-                'edit'        => 'Edit',
-                'delete'      => 'Delete',
-            ],
-        ],
-
-        'create' => [
-            'title'       => 'Create Task',
-            'save-btn'    => 'Save Task',
-            'back-btn'    => 'Back',
-            'title-field' => 'Title',
-            'description' => 'Description',
-            'project'     => 'Project',
-            'status'      => 'Status',
-            'priority'    => 'Priority',
-            'due-date'    => 'Due Date',
-            'assigned-to' => 'Assigned To',
-        ],
-
-        'edit' => [
-            'title'    => 'Edit Task',
-            'save-btn' => 'Save Task',
-            'back-btn' => 'Back',
-        ],
-    ],
-
-    'timesheets' => [
-        'index' => [
-            'title'          => 'Timesheets',
-            'create-btn'     => 'Log Time',
-            'create-success' => 'Timesheet entry created successfully.',
-            'update-success' => 'Timesheet entry updated successfully.',
-            'delete-success' => 'Timesheet entry deleted successfully.',
-            'delete-failed'  => 'Timesheet entry can not be deleted.',
-
-            'datagrid' => [
-                'id'          => 'ID',
-                'date'        => 'Date',
-                'project'     => 'Project',
-                'task'        => 'Task',
-                'user'        => 'User',
-                'hours'       => 'Hours',
-                'description' => 'Description',
-                'edit'        => 'Edit',
-                'delete'      => 'Delete',
-            ],
-        ],
-
-        'create' => [
-            'title'       => 'Log Time',
-            'save-btn'    => 'Save Entry',
-            'back-btn'    => 'Back',
-            'project'     => 'Project',
-            'task'        => 'Task',
-            'user'        => 'User',
-            'date'        => 'Date',
-            'hours'       => 'Hours',
-            'description' => 'Description',
-        ],
-
-        'edit' => [
-            'title'    => 'Edit Timesheet Entry',
-            'save-btn' => 'Save Entry',
-            'back-btn' => 'Back',
         ],
     ],
 
@@ -1554,7 +1434,7 @@ return [
                     'edit'            => 'Edit',
                     'view'            => 'View',
                     'created-at'      => 'Created At',
-                    'products'        => 'Services',
+                    'products'        => 'Products',
                     'contact-emails'  => 'Contact Emails',
                     'contact-numbers' => 'Contact Numbers',
                 ],
@@ -1627,7 +1507,7 @@ return [
                         'leads'         => 'Leads',
                         'organizations' => 'Organizations',
                         'persons'       => 'Persons',
-                        'products'      => 'Services',
+                        'products'      => 'Products',
                         'quotes'        => 'Quotes',
                         'warehouses'    => 'Warehouses',
                     ],
@@ -2121,8 +2001,8 @@ return [
             'details-info'   => 'Put The Basic Information of the Lead',
             'contact-person' => 'Contact Person',
             'contact-info'   => 'Information About the Contact Person',
-            'products'       => 'Services',
-            'products-info'  => 'Information About the Services',
+            'products'       => 'Products',
+            'products-info'  => 'Information About the Products',
         ],
 
         'edit' => [
@@ -2132,8 +2012,8 @@ return [
             'details-info'   => 'Put The Basic Information of the Lead',
             'contact-person' => 'Contact Person',
             'contact-info'   => 'Information About the Contact Person',
-            'products'       => 'Services',
-            'products-info'  => 'Information About the Services',
+            'products'       => 'Products',
+            'products-info'  => 'Information About the Products',
         ],
 
         'common' => [
@@ -2145,7 +2025,7 @@ return [
             ],
 
             'products' => [
-                'product-name' => 'Service Name',
+                'product-name' => 'Product Name',
                 'quantity'     => 'Quantity',
                 'price'        => 'Price',
                 'amount'       => 'Amount',
@@ -2161,7 +2041,7 @@ return [
 
             'tabs'        => [
                 'description' => 'Description',
-                'products'    => 'Services',
+                'products'    => 'Products',
                 'quotes'      => 'Quotes',
             ],
 
@@ -2274,7 +2154,7 @@ return [
                         'organizations'  => 'Organizations',
                         'outbox'         => 'Outbox',
                         'persons'        => 'Persons',
-                        'products'       => 'Services',
+                        'products'       => 'Products',
                         'quotes'         => 'Quotes',
                         'sent'           => 'Sent',
                         'settings'       => 'Settings',
@@ -2403,9 +2283,18 @@ return [
     'layouts' => [
         'app-version'          => 'Version: :version',
         'dashboard'            => 'Dashboard',
+        'accounts-dept'        => 'Accounts',
+        'marketing-dept'       => 'Marketing',
+        'operations-dept'      => 'Operations',
+        'general'              => 'General',
         'leads'                => 'Leads',
-        'quotes'               => 'Quotes',
-        'quote'                => 'Quote',
+        'quotes'               => 'Statement of Works',
+        'projects'             => 'Projects',
+        'tasks'                => 'Tasks',
+        'timesheets'           => 'Timesheets',
+        'payments'             => 'Payments',
+        'proposals'            => 'Proposals',
+        'quote'                => 'Statement of Work',
         'mail'                 => [
             'title'   => 'Mail',
             'compose' => 'Compose',
@@ -2422,11 +2311,8 @@ return [
         'person'               => 'Person',
         'organizations'        => 'Organizations',
         'organization'         => 'Organization',
-        'products'             => 'Services',
-        'product'              => 'Service',
-        'projects'             => 'Projects',
-        'tasks'                => 'Tasks',
-        'timesheets'           => 'Timesheets',
+        'products'             => 'Products',
+        'product'              => 'Product',
         'settings'             => 'Settings',
         'user'                 => 'User',
         'user-info'            => 'Manage all your users and their permissions in the CRM, what they’re allowed to do.',
@@ -2564,5 +2450,266 @@ return [
         'no-records' => 'Nothing to export',
         'xls'        => 'XLS',
         'xlsx'       => 'XLSX',
+    ],
+
+    'proposals' => [
+        'index' => [
+            'title'          => 'Proposals',
+            'create-btn'     => 'Create Proposal',
+            'create-success' => 'Proposal created successfully.',
+            'update-success' => 'Proposal updated successfully.',
+            'delete-success' => 'Proposal deleted successfully.',
+            'delete-failed'  => 'Proposal cannot be deleted.',
+
+            'datagrid' => [
+                'proposal-id'            => 'Proposal ID',
+                'project-name'           => 'Project Name',
+                'client-name'            => 'Client Name',
+                'project-owner'          => 'Project Owner',
+                'proposal-date'          => 'Proposal Date',
+                'value'                  => 'Value',
+                'status'                 => 'Status',
+                'ceo-approved-date'      => 'CEO Approval Date',
+                'manager-approved-date'  => 'Manager Approval Date',
+                'date-shared-with-client'=> 'Date shared with client',
+                'client-signed-date'     => 'Client signed date',
+                'edit'                   => 'Edit',
+                'delete'                 => 'Delete',
+            ],
+        ],
+
+        'create' => [
+            'title'                  => 'Create Proposal',
+            'save-btn'               => 'Save Proposal',
+            'back-btn'               => 'Back',
+            'proposal-id'            => 'Proposal ID',
+            'project'                => 'Project',
+            'client'                 => 'Client Name',
+            'project-owner'          => 'Project Owner',
+            'proposal-date'          => 'Proposal Date',
+            'value'                  => 'Value',
+            'status'                 => 'Status',
+            'ceo-approved-date'      => 'CEO Approval Date',
+            'manager-approved-date'  => 'Manager Approval Date',
+            'date-shared-with-client'=> 'Date shared with client',
+            'client-signed-date'     => 'Client signed date',
+        ],
+
+        'edit' => [
+            'title'                  => 'Edit Proposal',
+            'save-btn'               => 'Save Proposal',
+            'back-btn'               => 'Back',
+        ],
+    ],
+
+    'projects' => [
+        'index' => [
+            'title'          => 'Projects',
+            'create-btn'     => 'Create Project',
+            'create-success' => 'Project created successfully.',
+            'update-success' => 'Project updated successfully.',
+            'delete-success' => 'Project deleted successfully.',
+            'delete-failed'  => 'Project can not be deleted.',
+
+            'datagrid' => [
+                'id'         => 'ID',
+                'name'       => 'Name',
+                'status'     => 'Status',
+                'start-date' => 'Start Date',
+                'end-date'   => 'End Date',
+                'edit'       => 'Edit',
+                'delete'     => 'Delete',
+            ],
+        ],
+
+        'create' => [
+            'title'       => 'Create Project',
+            'save-btn'    => 'Save Project',
+            'back-btn'    => 'Back',
+            'name'        => 'Name',
+            'description' => 'Description',
+            'client'      => 'Client',
+            'project-type'=> 'Project Type',
+            'status'      => 'Status',
+            'start-date'  => 'Start Date',
+            'end-date'    => 'End Date',
+            'expected-end-date' => 'Expected End Date',
+            'actual-end-date'   => 'Actual End Date',
+            'manager'     => 'Project Manager',
+            'owner'       => 'Project Owner',
+            'priority'    => 'Priority',
+            'team-type'   => 'Project Handled By',
+            'internal'    => 'Internal',
+            'external'    => 'External',
+            'low'         => 'Low',
+            'medium'      => 'Medium',
+            'high'        => 'High',
+        ],
+
+        'edit' => [
+            'title'    => 'Edit Project',
+            'save-btn' => 'Save Project',
+            'back-btn' => 'Back',
+        ],
+    ],
+
+    'tasks' => [
+        'index' => [
+            'title'          => 'Tasks',
+            'create-btn'     => 'Create Task',
+            'create-success' => 'Task created successfully.',
+            'update-success' => 'Task updated successfully.',
+            'delete-success' => 'Task deleted successfully.',
+            'delete-failed'  => 'Task can not be deleted.',
+
+            'datagrid' => [
+                'id'          => 'ID',
+                'title'       => 'Title',
+                'project'     => 'Project',
+                'status'      => 'Status',
+                'priority'    => 'Priority',
+                'due-date'    => 'Due Date',
+                'assigned-to' => 'Assigned To',
+                'edit'        => 'Edit',
+                'delete'      => 'Delete',
+            ],
+        ],
+
+        'create' => [
+            'title'       => 'Create Task',
+            'save-btn'    => 'Save Task',
+            'back-btn'    => 'Back',
+            'title-field' => 'Title',
+            'description' => 'Description',
+            'project'     => 'Project',
+            'status'      => 'Status',
+            'priority'    => 'Priority',
+            'due-date'    => 'Due Date',
+            'assigned-to' => 'Assigned To',
+        ],
+
+        'edit' => [
+            'title'    => 'Edit Task',
+            'save-btn' => 'Save Task',
+            'back-btn' => 'Back',
+        ],
+    ],
+
+    'timesheets' => [
+        'index' => [
+            'title'          => 'Timesheets',
+            'create-btn'     => 'Log Time',
+            'create-success' => 'Timesheet entry created successfully.',
+            'update-success' => 'Timesheet entry updated successfully.',
+            'delete-success' => 'Timesheet entry deleted successfully.',
+            'delete-failed'  => 'Timesheet entry can not be deleted.',
+
+            'datagrid' => [
+                'id'          => 'ID',
+                'date'        => 'Date',
+                'project'     => 'Project',
+                'task'        => 'Task',
+                'user'        => 'User',
+                'hours'       => 'Hours',
+                'description' => 'Description',
+                'edit'        => 'Edit',
+                'delete'        => 'Delete',
+            ],
+        ],
+
+        'create' => [
+            'title'       => 'Log Time',
+            'save-btn'    => 'Save Entry',
+            'back-btn'    => 'Back',
+            'project'     => 'Project',
+            'task'        => 'Task',
+            'user'        => 'User',
+            'date'        => 'Date',
+            'hours'       => 'Hours',
+            'description' => 'Description',
+        ],
+
+        'edit' => [
+            'title'    => 'Edit Timesheet Entry',
+            'save-btn' => 'Save Entry',
+            'back-btn' => 'Back',
+        ],
+    ],
+
+    'payments' => [
+        'index' => [
+            'title'          => 'Payments',
+            'create-btn'     => 'Create Payment',
+            'create-success' => 'Payment created successfully.',
+            'update-success' => 'Payment updated successfully.',
+            'delete-success' => 'Payment deleted successfully.',
+            'delete-failed'  => 'Payment can not be deleted.',
+        ],
+
+        'datagrid' => [
+            'id'                    => 'ID',
+            'invoice-id'            => 'Invoice ID',
+            'project-name'          => 'Project Name',
+            'invoice-date'          => 'Invoice Date',
+            'invoice-amount'        => 'Invoice Amount',
+            'due-date'              => 'Due Date',
+            'payment-status'        => 'Payment Status',
+            'payment-received-date' => 'Payment Received Date',
+            'followup-owner'        => 'Followup Owner',
+            'edit'                  => 'Edit',
+            'delete'                => 'Delete',
+        ],
+
+        'create' => [
+            'title'                 => 'Create Payment',
+            'save-btn'              => 'Save Payment',
+            'back-btn'              => 'Back',
+            'invoice-id'            => 'Invoice ID',
+            'project'               => 'Project',
+            'invoice-date'          => 'Invoice Date',
+            'invoice-amount'        => 'Invoice Amount',
+            'due-date'              => 'Due Date',
+            'payment-status'        => 'Payment Status',
+            'payment-received-date' => 'Payment Received Date',
+            'followup-owner'        => 'Followup Owner',
+        ],
+
+        'edit' => [
+            'title'    => 'Edit Payment',
+            'save-btn' => 'Save Payment',
+            'back-btn' => 'Back',
+        ],
+    ],
+
+    'notifications' => [
+        'title'                   => 'Notifications',
+        'no-record'               => 'No notification found',
+        'view-all'                => 'View All',
+        'mark-all-read'           => 'Mark all as read',
+        'all-read-success'        => 'All notifications marked as read successfully',
+        'lead-created-title'      => 'New Lead Created',
+        'lead-created-message'    => 'A new lead \":name\" has been created and assigned to you.',
+        'proposal-created-title'    => 'New Proposal Created',
+        'proposal-created-message'  => 'A new proposal \":name\" has been created and assigned to you.',
+        'proposal-signed-title'   => 'Proposal Signed',
+        'proposal-signed-message' => 'The proposal for \":name\" has been signed by the client.',
+    ],
+
+    'settings' => [
+        'audit-logs' => [
+            'index' => [
+                'title' => 'Audit Logs',
+                'info'  => 'Track all user actions in the system',
+
+                'datagrid' => [
+                    'id'         => 'ID',
+                    'user'       => 'User',
+                    'action'     => 'Action',
+                    'method'     => 'Method',
+                    'ip-address' => 'IP Address',
+                    'timestamp'  => 'Timestamp',
+                ],
+            ],
+        ],
     ],
 ];

@@ -13,6 +13,7 @@ use Webkul\Admin\Exceptions\Handler;
 use Webkul\Admin\Http\Middleware\Bouncer as BouncerMiddleware;
 use Webkul\Admin\Http\Middleware\Locale;
 use Webkul\Admin\Http\Middleware\SanitizeUrl;
+use Webkul\Admin\Http\Middleware\AuditLogMiddleware;
 
 class AdminServiceProvider extends ServiceProvider
 {
@@ -27,9 +28,11 @@ class AdminServiceProvider extends ServiceProvider
 
         $router->aliasMiddleware('sanitize_url', SanitizeUrl::class);
 
+        $router->aliasMiddleware('audit_log', AuditLogMiddleware::class);
+
         include __DIR__.'/../Http/helpers.php';
 
-        Route::middleware(['web', 'admin_locale', 'user'])
+        Route::middleware(['web', 'admin_locale', 'user', 'audit_log'])
             ->prefix(config('app.admin_path'))
             ->group(__DIR__.'/../Routes/Admin/web.php');
 
@@ -56,6 +59,20 @@ class AdminServiceProvider extends ServiceProvider
         ]);
 
         $this->app->register(EventServiceProvider::class);
+
+        $this->app->booted(function () {
+            if (core()->getConfigData('email.mail.enabled') === '0') {
+                config([
+                    'menu.admin' => array_filter(config('menu.admin'), function ($item) {
+                        return ! str_starts_with($item['key'], 'mail');
+                    }),
+
+                    'acl' => array_filter(config('acl'), function ($item) {
+                        return ! str_starts_with($item['key'], 'mail');
+                    }),
+                ]);
+            }
+        });
     }
 
     /**

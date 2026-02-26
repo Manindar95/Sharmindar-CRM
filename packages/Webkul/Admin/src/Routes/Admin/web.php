@@ -61,6 +61,18 @@ require 'tasks-routes.php';
 require 'timesheets-routes.php';
 
 /**
+ * Payments routes.
+ */
+require 'payment-routes.php';
+
+require 'proposal-routes.php';
+
+/**
+ * Notification routes.
+ */
+require 'notification-routes.php';
+
+/**
  * Rest routes.
  */
 require 'rest-routes.php';

@@ -13,109 +13,63 @@ return [
     ],
 
     /**
-     * Leads.
+     * Accounts Department.
      */
     [
-        'key'        => 'leads',
-        'name'       => 'admin::app.layouts.leads',
-        'route'      => 'admin.leads.index',
+        'key'        => 'accounts-dept',
+        'name'       => 'admin::app.layouts.accounts-dept',
+        'route'      => 'admin.quotes.index',
         'sort'       => 2,
-        'icon-class' => 'icon-leads',
-    ],
-
-    /**
-     * Quotes.
-     */
-    [
-        'key'        => 'quotes',
+        'icon-class' => 'icon-product',
+    ], [
+        'key'        => 'accounts-dept.quotes',
         'name'       => 'admin::app.layouts.quotes',
         'route'      => 'admin.quotes.index',
-        'sort'       => 3,
+        'sort'       => 1,
         'icon-class' => 'icon-quote',
-    ],
-
-    /**
-     * Emails.
-     */
-    [
-        'key'        => 'mail',
-        'name'       => 'admin::app.layouts.mail.title',
-        'route'      => 'admin.mail.index',
-        'params'     => ['route' => 'inbox'],
-        'sort'       => 4,
-        'icon-class' => 'icon-mail',
     ], [
-        'key'        => 'mail.inbox',
-        'name'       => 'admin::app.layouts.mail.inbox',
-        'route'      => 'admin.mail.index',
-        'params'     => ['route' => 'inbox'],
+        'key'        => 'accounts-dept.payments',
+        'name'       => 'admin::app.layouts.payments',
+        'route'      => 'admin.payments.index',
         'sort'       => 2,
-        'icon-class' => '',
-    ], [
-        'key'        => 'mail.draft',
-        'name'       => 'admin::app.layouts.mail.draft',
-        'route'      => 'admin.mail.index',
-        'params'     => ['route' => 'draft'],
+        'icon-class' => 'icon-product',
+    ],
+
+    /**
+     * Marketing Department.
+     */
+    [
+        'key'        => 'marketing-dept',
+        'name'       => 'admin::app.layouts.marketing-dept',
+        'route'      => 'admin.leads.index',
         'sort'       => 3,
-        'icon-class' => '',
+        'icon-class' => 'icon-leads',
     ], [
-        'key'        => 'mail.outbox',
-        'name'       => 'admin::app.layouts.mail.outbox',
-        'route'      => 'admin.mail.index',
-        'params'     => ['route' => 'outbox'],
-        'sort'       => 4,
-        'icon-class' => '',
+        'key'        => 'marketing-dept.leads',
+        'name'       => 'admin::app.layouts.leads',
+        'route'      => 'admin.leads.index',
+        'sort'       => 1,
+        'icon-class' => 'icon-leads',
     ], [
-        'key'        => 'mail.sent',
-        'name'       => 'admin::app.layouts.mail.sent',
-        'route'      => 'admin.mail.index',
-        'params'     => ['route' => 'sent'],
-        'sort'       => 4,
-        'icon-class' => '',
+        'key'        => 'marketing-dept.proposals',
+        'name'       => 'admin::app.proposals.index.title',
+        'route'      => 'admin.proposals.index',
+        'sort'       => 2,
+        'icon-class' => 'icon-quote',
     ], [
-        'key'        => 'mail.trash',
-        'name'       => 'admin::app.layouts.mail.trash',
-        'route'      => 'admin.mail.index',
-        'params'     => ['route' => 'trash'],
-        'sort'       => 5,
-        'icon-class' => '',
-    ],
-    // , [
-    //     'key'        => 'mail.setting',
-    //     'name'       => 'admin::app.layouts.mail.setting',
-    //     'route'      => 'admin.mail.index',
-    //     'params'     => ['route' => 'setting'],
-    //     'sort'       => 5,
-    // ]
-
-    /**
-     * Activities.
-     */
-    [
-        'key'        => 'activities',
-        'name'       => 'admin::app.layouts.activities',
-        'route'      => 'admin.activities.index',
-        'sort'       => 5,
-        'icon-class' => 'icon-activity',
-    ],
-
-    /**
-     * Contacts.
-     */
-    [
-        'key'        => 'contacts',
+        'key'        => 'marketing-dept.contacts',
         'name'       => 'admin::app.layouts.contacts',
         'route'      => 'admin.contacts.persons.index',
-        'sort'       => 6,
+        'sort'       => 3,
         'icon-class' => 'icon-contact',
     ], [
-        'key'        => 'contacts.persons',
+        'key'        => 'marketing-dept.contacts.persons',
         'name'       => 'admin::app.layouts.persons',
         'route'      => 'admin.contacts.persons.index',
         'sort'       => 1,
         'icon-class' => '',
     ], [
-        'key'        => 'contacts.organizations',
+        'key'        => 'marketing-dept.contacts.organizations',
         'name'       => 'admin::app.layouts.organizations',
         'route'      => 'admin.contacts.organizations.index',
         'sort'       => 2,
@@ -123,47 +77,55 @@ return [
     ],
 
     /**
-     * Services.
+     * Operations Department.
      */
     [
-        'key'        => 'products',
-        'name'       => 'admin::app.layouts.products',
-        'route'      => 'admin.products.index',
-        'sort'       => 7,
-        'icon-class' => 'icon-product',
-    ],
-
-    /**
-     * Projects.
-     */
-    [
-        'key'        => 'projects',
+        'key'        => 'operations-dept',
+        'name'       => 'admin::app.layouts.operations-dept',
+        'route'      => 'admin.projects.index',
+        'sort'       => 4,
+        'icon-class' => 'icon-note',
+    ], [
+        'key'        => 'operations-dept.projects',
         'name'       => 'admin::app.layouts.projects',
         'route'      => 'admin.projects.index',
-        'sort'       => 8,
+        'sort'       => 1,
         'icon-class' => 'icon-note',
-    ],
-
-    /**
-     * Tasks.
-     */
-    [
-        'key'        => 'tasks',
+    ], [
+        'key'        => 'operations-dept.tasks',
         'name'       => 'admin::app.layouts.tasks',
         'route'      => 'admin.tasks.index',
-        'sort'       => 9,
+        'sort'       => 2,
         'icon-class' => 'icon-activity',
+    ], [
+        'key'        => 'operations-dept.timesheets',
+        'name'       => 'admin::app.layouts.timesheets',
+        'route'      => 'admin.timesheets.index',
+        'sort'       => 3,
+        'icon-class' => 'icon-calendar',
     ],
 
     /**
-     * Timesheets.
+     * General.
      */
     [
-        'key'        => 'timesheets',
-        'name'       => 'admin::app.layouts.timesheets',
-        'route'      => 'admin.timesheets.index',
-        'sort'       => 10,
-        'icon-class' => 'icon-calendar',
+        'key'        => 'general',
+        'name'       => 'admin::app.layouts.general',
+        'route'      => 'admin.products.index',
+        'sort'       => 5,
+        'icon-class' => 'icon-settings',
+    ], [
+        'key'        => 'general.products',
+        'name'       => 'admin::app.layouts.products',
+        'route'      => 'admin.products.index',
+        'sort'       => 1,
+        'icon-class' => 'icon-product',
+    ], [
+        'key'        => 'general.activities',
+        'name'       => 'admin::app.layouts.activities',
+        'route'      => 'admin.activities.index',
+        'sort'       => 2,
+        'icon-class' => 'icon-activity',
     ],
 
     /**
@@ -173,9 +135,8 @@ return [
         'key'        => 'settings',
         'name'       => 'admin::app.layouts.settings',
         'route'      => 'admin.settings.index',
-        'sort'       => 11,
+        'sort'       => 7,
         'icon-class' => 'icon-setting',
-
     ], [
         'key'        => 'settings.user',
         'name'       => 'admin::app.layouts.user',
@@ -295,8 +256,7 @@ return [
         'route'      => 'admin.settings.workflows.index',
         'sort'       => 3,
         'icon-class' => 'icon-settings-flow',
-    ],
-    [
+    ], [
         'key'        => 'settings.automation.data_transfer',
         'name'       => 'admin::app.layouts.data_transfer',
         'info'       => 'admin::app.layouts.data_transfer_info',
@@ -317,6 +277,20 @@ return [
         'route'      => 'admin.settings.tags.index',
         'sort'       => 1,
         'icon-class' => 'icon-settings-tag',
+    ], [
+        'key'        => 'settings.other_settings.web_forms',
+        'name'       => 'web_form::app.menu.title',
+        'info'       => 'web_form::app.menu.title-info',
+        'route'      => 'admin.settings.web_forms.index',
+        'sort'       => 2,
+        'icon-class' => 'icon-settings-webforms',
+    ], [
+        'key'        => 'settings.other_settings.audit_logs',
+        'name'       => 'admin::app.settings.audit-logs.index.title',
+        'info'       => 'admin::app.settings.audit-logs.index.info',
+        'route'      => 'admin.settings.audit_logs.index',
+        'sort'       => 3,
+        'icon-class' => 'icon-activity',
     ],
 
     /**
@@ -326,8 +300,54 @@ return [
         'key'        => 'configuration',
         'name'       => 'admin::app.layouts.configuration',
         'route'      => 'admin.configuration.index',
-        'sort'       => 12,
+        'sort'       => 8,
         'icon-class' => 'icon-configuration',
     ],
 
+    /**
+     * Emails.
+     */
+    [
+        'key'        => 'mail',
+        'name'       => 'admin::app.layouts.mail.title',
+        'route'      => 'admin.mail.index',
+        'params'     => ['route' => 'inbox'],
+        'sort'       => 6,
+        'icon-class' => 'icon-mail',
+    ], [
+        'key'        => 'mail.inbox',
+        'name'       => 'admin::app.layouts.mail.inbox',
+        'route'      => 'admin.mail.index',
+        'params'     => ['route' => 'inbox'],
+        'sort'       => 2,
+        'icon-class' => '',
+    ], [
+        'key'        => 'mail.draft',
+        'name'       => 'admin::app.layouts.mail.draft',
+        'route'      => 'admin.mail.index',
+        'params'     => ['route' => 'draft'],
+        'sort'       => 3,
+        'icon-class' => '',
+    ], [
+        'key'        => 'mail.outbox',
+        'name'       => 'admin::app.layouts.mail.outbox',
+        'route'      => 'admin.mail.index',
+        'params'     => ['route' => 'outbox'],
+        'sort'       => 4,
+        'icon-class' => '',
+    ], [
+        'key'        => 'mail.sent',
+        'name'       => 'admin::app.layouts.mail.sent',
+        'route'      => 'admin.mail.index',
+        'params'     => ['route' => 'sent'],
+        'sort'       => 4,
+        'icon-class' => '',
+    ], [
+        'key'        => 'mail.trash',
+        'name'       => 'admin::app.layouts.mail.trash',
+        'route'      => 'admin.mail.index',
+        'params'     => ['route' => 'trash'],
+        'sort'       => 5,
+        'icon-class' => '',
+    ],
 ];

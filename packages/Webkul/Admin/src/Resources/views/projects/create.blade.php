@@ -33,22 +33,40 @@
             </div>
 
             <div class="box-shadow rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
-                <x-admin::form.control-group>
-                    <x-admin::form.control-group.label class="required">
-                        @lang('admin::app.projects.create.name')
-                    </x-admin::form.control-group.label>
+                <div class="flex gap-4">
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label class="required">
+                            @lang('admin::app.projects.create.name')
+                        </x-admin::form.control-group.label>
 
-                    <x-admin::form.control-group.control
-                        type="text"
-                        id="name"
-                        name="name"
-                        rules="required"
-                        :label="trans('admin::app.projects.create.name')"
-                        :placeholder="trans('admin::app.projects.create.name')"
-                    />
+                        <x-admin::form.control-group.control
+                            type="text"
+                            id="name"
+                            name="name"
+                            rules="required"
+                            :label="trans('admin::app.projects.create.name')"
+                            :placeholder="trans('admin::app.projects.create.name')"
+                        />
 
-                    <x-admin::form.control-group.error control-name="name" />
-                </x-admin::form.control-group>
+                        <x-admin::form.control-group.error control-name="name" />
+                    </x-admin::form.control-group>
+
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.project-type')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="text"
+                            id="project_type"
+                            name="project_type"
+                            :label="trans('admin::app.projects.create.project-type')"
+                            :placeholder="trans('admin::app.projects.create.project-type')"
+                        />
+
+                        <x-admin::form.control-group.error control-name="project_type" />
+                    </x-admin::form.control-group>
+                </div>
 
                 <x-admin::form.control-group>
                     <x-admin::form.control-group.label>
@@ -67,6 +85,26 @@
                 </x-admin::form.control-group>
 
                 <div class="flex gap-4">
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.client')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="select"
+                            id="client_id"
+                            name="client_id"
+                            :label="trans('admin::app.projects.create.client')"
+                        >
+                            <option value="">Select Client</option>
+                            @foreach ($persons as $person)
+                                <option value="{{ $person->id }}">{{ $person->name }}</option>
+                            @endforeach
+                        </x-admin::form.control-group.control>
+
+                        <x-admin::form.control-group.error control-name="client_id" />
+                    </x-admin::form.control-group>
+
                     <x-admin::form.control-group class="flex-1">
                         <x-admin::form.control-group.label class="required">
                             @lang('admin::app.projects.create.status')
@@ -87,7 +125,9 @@
 
                         <x-admin::form.control-group.error control-name="status" />
                     </x-admin::form.control-group>
+                </div>
 
+                <div class="flex gap-4">
                     <x-admin::form.control-group class="flex-1">
                         <x-admin::form.control-group.label>
                             @lang('admin::app.projects.create.start-date')
@@ -116,6 +156,121 @@
                         />
 
                         <x-admin::form.control-group.error control-name="end_date" />
+                    </x-admin::form.control-group>
+                </div>
+
+                <div class="flex gap-4">
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.expected-end-date')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="date"
+                            id="expected_end_date"
+                            name="expected_end_date"
+                            :label="trans('admin::app.projects.create.expected-end-date')"
+                        />
+
+                        <x-admin::form.control-group.error control-name="expected_end_date" />
+                    </x-admin::form.control-group>
+
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.actual-end-date')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="date"
+                            id="actual_end_date"
+                            name="actual_end_date"
+                            :label="trans('admin::app.projects.create.actual-end-date')"
+                        />
+
+                        <x-admin::form.control-group.error control-name="actual_end_date" />
+                    </x-admin::form.control-group>
+                </div>
+
+                <div class="flex gap-4">
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.manager')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="select"
+                            id="manager_id"
+                            name="manager_id"
+                            :label="trans('admin::app.projects.create.manager')"
+                        >
+                            <option value="">Select Manager</option>
+                            @foreach ($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                            @endforeach
+                        </x-admin::form.control-group.control>
+
+                        <x-admin::form.control-group.error control-name="manager_id" />
+                    </x-admin::form.control-group>
+
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.owner')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="select"
+                            id="owner_id"
+                            name="owner_id"
+                            :label="trans('admin::app.projects.create.owner')"
+                        >
+                            <option value="">Select Owner</option>
+                            @foreach ($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                            @endforeach
+                        </x-admin::form.control-group.control>
+
+                        <x-admin::form.control-group.error control-name="owner_id" />
+                    </x-admin::form.control-group>
+                </div>
+
+                <div class="flex gap-4">
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.priority')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="select"
+                            id="priority"
+                            name="priority"
+                            :label="trans('admin::app.projects.create.priority')"
+                        >
+                            <option value="">Select Priority</option>
+                            <option value="low">@lang('admin::app.projects.create.low')</option>
+                            <option value="medium">@lang('admin::app.projects.create.medium')</option>
+                            <option value="high">@lang('admin::app.projects.create.high')</option>
+                        </x-admin::form.control-group.control>
+
+                        <x-admin::form.control-group.error control-name="priority" />
+                    </x-admin::form.control-group>
+
+                    <x-admin::form.control-group class="flex-1">
+                        <x-admin::form.control-group.label>
+                            @lang('admin::app.projects.create.team-type')
+                        </x-admin::form.control-group.label>
+
+                        <x-admin::form.control-group.control
+                            type="select"
+                            id="team_type"
+                            name="team_type"
+                            :label="trans('admin::app.projects.create.team-type')"
+                        >
+                            <option value="">Select Team</option>
+                            <option value="internal">@lang('admin::app.projects.create.internal')</option>
+                            <option value="external">@lang('admin::app.projects.create.external')</option>
+                        </x-admin::form.control-group.control>
+
+                        <x-admin::form.control-group.error control-name="team_type" />
                     </x-admin::form.control-group>
                 </div>
             </div>

@@ -29,6 +29,7 @@ use Webkul\Lead\Repositories\TypeRepository;
 use Webkul\Lead\Services\MagicAIService;
 use Webkul\Tag\Repositories\TagRepository;
 use Webkul\User\Repositories\UserRepository;
+use Webkul\Admin\Notifications\Lead\Created as LeadCreatedNotification;
 
 class LeadController extends Controller
 {
@@ -184,6 +185,10 @@ class LeadController extends Controller
         }
 
         $lead = $this->leadRepository->create($data);
+
+        if ($lead->user) {
+            $lead->user->notify(new LeadCreatedNotification(['lead' => $lead]));
+        }
 
         if (request()->ajax()) {
             return response()->json([
@@ -725,6 +730,10 @@ class LeadController extends Controller
             ]));
 
             Event::dispatch('lead.create.after', $lead);
+
+            if ($lead->user) {
+                $lead->user->notify(new LeadCreatedNotification(['lead' => $lead]));
+            }
 
             $leads[] = $lead;
         }

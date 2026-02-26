@@ -310,5 +310,18 @@ return [
                 'default' => config('imap.accounts.default.password'),
             ],
         ],
+    ], [
+        'key'    => 'email.mail',
+        'name'   => 'admin::app.configuration.index.email.mail.title',
+        'info'   => 'admin::app.configuration.index.email.mail.info',
+        'sort'   => 2,
+        'fields' => [
+            [
+                'name'    => 'enabled',
+                'title'   => 'admin::app.configuration.index.email.mail.enabled',
+                'type'    => 'boolean',
+                'default' => true,
+            ],
+        ],
     ],
 ];
