@@ -3,6 +3,7 @@
 namespace Webkul\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Settings\TypeDataGrid;
@@ -21,7 +22,7 @@ class TypeController extends Controller
     /**
      * Display a listing of the type.
      */
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(TypeDataGrid::class)->process();

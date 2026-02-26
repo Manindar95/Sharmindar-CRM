@@ -4,6 +4,7 @@ namespace Webkul\Admin\Http\Controllers\Mail;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
@@ -37,7 +38,7 @@ class EmailController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View|JsonResponse|RedirectResponse
+    public function index(): View|JsonResponse|BinaryFileResponse|RedirectResponse
     {
         $route = request('route');
 

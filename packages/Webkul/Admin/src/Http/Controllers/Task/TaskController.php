@@ -3,6 +3,7 @@
 namespace Webkul\Admin\Http\Controllers\Task;
 
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Task\TaskDataGrid;
 use Webkul\Admin\Http\Controllers\Controller;
@@ -11,7 +12,7 @@ use Webkul\Admin\Models\Project;
 
 class TaskController extends Controller
 {
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(TaskDataGrid::class)->process();

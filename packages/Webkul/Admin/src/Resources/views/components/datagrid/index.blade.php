@@ -602,6 +602,14 @@
                         params.filters[column.index] = column.value;
                     });
 
+                    // Include existing URL params (e.g. view_type, route)
+                    const urlParams = new URLSearchParams(window.location.search);
+                    urlParams.forEach((value, key) => {
+                        if (!params.hasOwnProperty(key)) {
+                            params[key] = value;
+                        }
+                    });
+
                     this.$axios
                         .get(this.src, {
                             params,
@@ -611,15 +619,32 @@
                             const url = window.URL.createObjectURL(new Blob([response.data]));
                             const link = document.createElement('a');
                             link.href = url;
-                            link.setAttribute('download', `export-${Date.now()}.${format}`);
+
+                            // Try to get filename from content-disposition header
+                            const disposition = response.headers['content-disposition'];
+                            let filename = 'export-' + Date.now() + '.' + format;
+                            if (disposition) {
+                                const filenameMatch = disposition.match(/filename[^;=\n]*=(.*)/);
+                                if (filenameMatch && filenameMatch[1]) {
+                                    filename = filenameMatch[1].replace(/['"]/g, '');
+                                }
+                            }
+
+                            link.setAttribute('download', filename);
                             document.body.appendChild(link);
                             link.click();
                             document.body.removeChild(link);
-
-                            this.$emitter.emit('add-flash', { type: 'success', message: 'Export downloaded successfully.' });
+                            window.URL.revokeObjectURL(url);
                         })
-                        .catch(() => {
-                            this.$emitter.emit('add-flash', { type: 'error', message: 'Export failed. Please try again.' });
+                        .catch((error) => {
+                            // When responseType is blob, error responses are also blobs
+                            if (error.response && error.response.data instanceof Blob) {
+                                error.response.data.text().then(text => {
+                                    this.$emitter.emit('add-flash', { type: 'error', message: 'Export error: ' + text.substring(0, 150) });
+                                });
+                            } else {
+                                this.$emitter.emit('add-flash', { type: 'error', message: 'Export failed: ' + (error.message || 'Unknown error') });
+                            }
                         });
                 },
 

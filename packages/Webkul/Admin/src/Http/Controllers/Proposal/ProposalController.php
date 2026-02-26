@@ -3,6 +3,7 @@
 namespace Webkul\Admin\Http\Controllers\Proposal;
 
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Proposal\ProposalDataGrid;
 use Webkul\Admin\Http\Controllers\Controller;
@@ -20,7 +21,7 @@ class ProposalController extends Controller
      *
      * @return \Illuminate\View\View|\Illuminate\Http\JsonResponse
      */
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(ProposalDataGrid::class)->process();

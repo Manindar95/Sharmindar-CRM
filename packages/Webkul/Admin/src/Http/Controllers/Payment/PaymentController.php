@@ -3,6 +3,7 @@
 namespace Webkul\Admin\Http\Controllers\Payment;
 
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Payment\PaymentDataGrid;
 use Webkul\Admin\Http\Controllers\Controller;
@@ -17,7 +18,7 @@ class PaymentController extends Controller
      *
      * @return \Illuminate\View\View|\Illuminate\Http\JsonResponse
      */
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(PaymentDataGrid::class)->process();

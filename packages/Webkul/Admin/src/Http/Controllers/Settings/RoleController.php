@@ -3,6 +3,7 @@
 namespace Webkul\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
@@ -22,7 +23,7 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(RoleDataGrid::class)->process();

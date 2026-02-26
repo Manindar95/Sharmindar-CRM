@@ -3,6 +3,7 @@
 namespace Webkul\Admin\Http\Controllers\Project;
 
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Project\ProjectDataGrid;
 use Webkul\Admin\Http\Controllers\Controller;
@@ -12,7 +13,7 @@ use Webkul\User\Models\User;
 
 class ProjectController extends Controller
 {
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(ProjectDataGrid::class)->process();

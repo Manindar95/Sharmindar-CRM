@@ -4,6 +4,7 @@ namespace Webkul\Admin\Http\Controllers\Settings\Marketing;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Webkul\Admin\DataGrids\Settings\Marketing\EventDataGrid;
@@ -21,7 +22,7 @@ class EventController extends Controller
     /**
      * Display a listing of the marketing events.
      */
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(EventDataGrid::class)->process();

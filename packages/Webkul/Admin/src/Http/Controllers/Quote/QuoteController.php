@@ -3,6 +3,7 @@
 namespace Webkul\Admin\Http\Controllers\Quote;
 
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
@@ -38,7 +39,7 @@ class QuoteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View|JsonResponse
+    public function index(): View|JsonResponse|BinaryFileResponse
     {
         if (request()->ajax()) {
             return datagrid(QuoteDataGrid::class)->process();
