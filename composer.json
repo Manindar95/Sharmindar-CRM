@@ -83,7 +83,8 @@
             "Company\\Core\\Setting\\": "packages/Company/Core/Setting/src",
             "Company\\Core\\Activity\\": "packages/Company/Core/Activity/src",
             "Company\\Core\\Notification\\": "packages/Company/Core/Notification/src",
-            "Company\\Core\\Dashboard\\": "packages/Company/Core/Dashboard/src"
+            "Company\\Core\\Dashboard\\": "packages/Company/Core/Dashboard/src",
+            "Company\\Core\\ITSales\\": "packages/Company/Core/ITSales/src"
         }
     },
     "autoload-dev": {

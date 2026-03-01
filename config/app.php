@@ -228,6 +228,7 @@ return [
         Company\Core\Settings\Providers\SettingsServiceProvider::class ,
         Company\Core\Activity\Providers\ActivityServiceProvider::class ,
         Company\Core\Dashboard\Providers\DashboardServiceProvider::class ,
+        Company\Core\ITSales\Providers\ITSalesServiceProvider::class ,
     ])->toArray(),
 
     /*
