@@ -110,15 +110,20 @@
         <x-admin::layouts.header />
 
         <div
-            class="group/container sidebar-collapsed flex gap-4"
+            class="group/container flex"
             ref="appLayout"
+            id="app-layout"
         >
             <!-- Page Sidebar Blade Component -->
             <x-admin::layouts.sidebar.desktop />
 
-            <div class="flex min-h-[calc(100vh-62px)] max-w-full flex-1 flex-col bg-gray-100 pt-3 transition-all duration-300 dark:bg-gray-950">
+            <div
+                id="main-content"
+                class="flex min-h-[calc(100vh-62px)] max-w-full flex-1 flex-col bg-gray-100 pt-3 transition-[margin] duration-300 ease-in-out dark:bg-gray-950"
+                style="margin-left: {{ request()->cookie('sidebar_collapsed') ? '64px' : '210px' }};"
+            >
                 <!-- Page Content Blade Component -->
-                <div class="px-4 pb-6 ltr:lg:pl-[85px] rtl:lg:pr-[85px]">
+                <div class="px-6 pb-6">
                     {{ $slot }}
                 </div>
             </div>

@@ -11,16 +11,27 @@ class MenuItem
      *
      * @return void
      */
-    public function __construct(
-        private string $key,
-        private string $name,
-        private string $route,
-        private string $url,
-        private int $sort,
-        private string $icon,
-        private string $info,
-        private Collection $children,
-    ) {}
+    public function __construct(private
+        string $key, private
+        string $name, private
+        string $route, private
+        string $url, private
+        int $sort, private
+        string $icon, private
+        string $info, private
+        Collection $children, private
+        string $group = '',
+        )
+    {
+    }
+
+    /**
+     * Get the department group label of the menu item.
+     */
+    public function getGroup(): string
+    {
+        return $this->group;
+    }
 
     /**
      * Set name of menu item.
@@ -171,7 +182,7 @@ class MenuItem
      */
     public function getChildren(): Collection
     {
-        if (! $this->haveChildren()) {
+        if (!$this->haveChildren()) {
             return collect();
         }
 
@@ -183,7 +194,7 @@ class MenuItem
      */
     public function isActive(): bool
     {
-        if (request()->fullUrlIs($this->getUrl().'*')) {
+        if (request()->fullUrlIs($this->getUrl() . '*')) {
             return true;
         }
 

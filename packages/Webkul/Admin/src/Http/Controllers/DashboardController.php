@@ -39,7 +39,7 @@ class DashboardController extends Controller
     public function index()
     {
         // Dynamically fetch all allowed widgets pushed into the CRM Engine
-        $widgets = \Company\Core\Dashboard\Facades\Dashboard::getAvailableWidgets();
+        $widgets = \Sharmindar\Core\Dashboard\Facades\Dashboard::getAvailableWidgets();
 
         return view('admin::dashboard.index')->with([
             'startDate' => $this->dashboardHelper->getStartDate(),

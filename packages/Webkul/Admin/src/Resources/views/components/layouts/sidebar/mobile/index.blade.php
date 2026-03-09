@@ -35,15 +35,38 @@
 
             <x-slot:content class="p-4">
                 <div class="journal-scroll h-[calc(100vh-100px)] overflow-auto">
-                    <nav class="grid w-full gap-2">
+                    <nav class="grid w-full gap-1">
+                        @php
+                            $lastGroup       = null;
+                            $sysAdminGroups  = ['System Administration'];
+                        @endphp
+
                         @foreach (menu()->getItems('admin') as $menuItem)
                             @php
+                                $menuKey        = $menuItem->getKey();
+                                /* Skip child items in the top-level loop to avoid double-rendering */
+                                if (str_contains($menuKey, '.')) continue;
+
                                 $hasActiveChild = $menuItem->haveChildren() && collect($menuItem->getChildren())->contains(fn($child) => $child->isActive());
-
-                                $isMenuActive = $menuItem->isActive() == 'active' || $hasActiveChild;
-
-                                $menuKey = $menuItem->getKey();
+                                $isMenuActive   = $menuItem->isActive() == 'active' || $hasActiveChild;
+                                $currentGroup   = $menuItem->getGroup();
+                                $isSysAdmin     = in_array($currentGroup, $sysAdminGroups);
                             @endphp
+
+                            {{-- Separator before System Administration --}}
+                            @if ($isSysAdmin && $lastGroup !== $currentGroup)
+                                <div class="my-2 border-t border-gray-200 dark:border-gray-700"></div>
+                            @endif
+
+                            {{-- Department Group Label --}}
+                            @if ($currentGroup && $currentGroup !== $lastGroup)
+                                <div class="px-2 pb-1 pt-2">
+                                    <p class="text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                                        {{ $currentGroup }}
+                                    </p>
+                                </div>
+                                @php $lastGroup = $currentGroup; @endphp
+                            @endif
 
                             <div
                                 class="menu-item relative"
@@ -60,30 +83,45 @@
                                     <div class="flex items-center gap-3">
                                         <span class="{{ $menuItem->getIcon() }} text-2xl"></span>
 
-                                        <p class="whitespace-nowrap font-semibold">{{ $menuItem->getName() }}</p>
+                                        <p class="whitespace-nowrap font-semibold">
+                                            {{ core()->getConfigData('general.settings.menu.'.$menuKey) ?? $menuItem->getName() }}
+                                        </p>
                                     </div>
 
                                     @if ($menuItem->haveChildren())
                                         <span
                                             class="transform text-lg transition-transform duration-300"
-                                            :class="{ 'icon-arrow-up': activeMenu === '{{ $menuKey }}', 'icon-arrow-down': activeMenu !== '{{ $menuKey }}' }"
-                                        ></span>
+                                            :class="{ 'rotate-180': activeMenu === '{{ $menuKey }}' }"
+                                        >
+                                            <i class="icon-arrow-down"></i>
+                                        </span>
                                     @endif
                                 </a>
 
                                 @if ($menuItem->haveChildren() && !in_array($menuKey, ['settings', 'configuration']))
                                     <div
-                                        class="submenu ml-1 mt-1 overflow-hidden rounded-b-lg border-l-2 transition-all duration-300 dark:border-gray-700"
-                                        :class="{ 'max-h-[500px] py-2 border-l-brandColor bg-gray-50 dark:bg-gray-900': activeMenu === '{{ $menuKey }}' || {{ $hasActiveChild ? 'true' : 'false' }}, 'max-h-0 py-0 border-transparent bg-transparent': activeMenu !== '{{ $menuKey }}' && !{{ $hasActiveChild ? 'true' : 'false' }} }"
+                                        class="submenu ml-1 mt-1 overflow-hidden transition-all duration-300"
+                                        :class="{ 'max-h-[800px] mb-2': activeMenu === '{{ $menuKey }}' || {{ $hasActiveChild ? 'true' : 'false' }}, 'max-h-0': activeMenu !== '{{ $menuKey }}' && !{{ $hasActiveChild ? 'true' : 'false' }} }"
                                     >
-                                        @foreach ($menuItem->getChildren() as $subMenuItem)
-                                            <a
-                                                href="{{ $subMenuItem->getUrl() }}"
-                                                class="submenu-link block whitespace-nowrap p-2 pl-10 text-sm transition-colors duration-200"
-                                                :class="{ 'text-brandColor font-medium bg-gray-100 dark:bg-gray-800': '{{ $subMenuItem->isActive() }}' === '1', 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800': '{{ $subMenuItem->isActive() }}' !== '1' }">
-                                                {{ $subMenuItem->getName() }}
-                                            </a>
-                                        @endforeach
+                                        <div class="ml-4 border-l-2 border-gray-200 pl-2 dark:border-gray-700">
+                                            @foreach ($menuItem->getChildren() as $subMenuItem)
+                                                @php
+                                                    $subActive = $subMenuItem->isActive();
+                                                    $subIcon   = $subMenuItem->getIcon();
+                                                @endphp
+                                                <a
+                                                    href="{{ $subMenuItem->getUrl() }}"
+                                                    class="submenu-link flex items-center gap-2 whitespace-nowrap rounded-lg p-2 text-sm transition-colors duration-200"
+                                                    :class="{ 'bg-blue-50 text-brandColor font-semibold dark:bg-gray-800': '{{ $subActive }}' === '1', 'text-gray-600 dark:text-gray-400 hover:bg-gray-50': '{{ $subActive }}' !== '1' }">
+                                                    
+                                                    @if($subIcon)
+                                                        <span class="{{ $subIcon }} text-lg opacity-70"></span>
+                                                    @endif
+
+                                                    <span>{{ core()->getConfigData('general.settings.menu.'.$subMenuItem->getKey()) ?? $subMenuItem->getName() }}</span>
+                                                </a>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 @endif
                             </div>

@@ -221,14 +221,19 @@ return [
         Webkul\WebForm\Providers\WebFormServiceProvider::class ,
 
         /*
-         * Company Core Service Providers...
+         * Sharmindar Core Service Providers...
          */
-        Company\Core\User\Providers\UserServiceProvider::class ,
-        Company\Core\Department\Providers\DepartmentServiceProvider::class ,
-        Company\Core\Settings\Providers\SettingsServiceProvider::class ,
-        Company\Core\Activity\Providers\ActivityServiceProvider::class ,
-        Company\Core\Dashboard\Providers\DashboardServiceProvider::class ,
-        Company\Core\ITSales\Providers\ITSalesServiceProvider::class ,
+        Sharmindar\Core\User\Providers\UserServiceProvider::class ,
+        Sharmindar\Core\Department\Providers\DepartmentServiceProvider::class ,
+        Sharmindar\Core\Settings\Providers\SettingsServiceProvider::class ,
+        Sharmindar\Core\Activity\Providers\ActivityServiceProvider::class ,
+        Sharmindar\Core\Dashboard\Providers\DashboardServiceProvider::class ,
+        Sharmindar\Core\ITSales\Providers\ITSalesServiceProvider::class ,
+
+        /*
+         * Sharmindar Core Service Providers...
+         */
+        Sharmindar\Core\Providers\CoreServiceProvider::class ,
     ])->toArray(),
 
     /*
@@ -249,7 +254,7 @@ return [
         'Report' => Webkul\Core\Facades\Report::class ,
         'Core' => Webkul\Core\Facades\Core::class ,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class ,
-        'CompanyDashboard' => Company\Core\Dashboard\Facades\Dashboard::class ,
+        'CompanyDashboard' => Sharmindar\Core\Dashboard\Facades\Dashboard::class ,
     ])->toArray(),
 
 ];

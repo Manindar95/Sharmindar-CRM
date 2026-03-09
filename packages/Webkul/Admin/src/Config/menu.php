@@ -1,113 +1,87 @@
 <?php
 
 return [
-    /**
-     * Dashboard.
-     */
-    [
-        'key' => 'dashboard',
-        'name' => 'admin::app.layouts.dashboard',
-        'route' => 'admin.dashboard.index',
-        'sort' => 1,
-        'icon-class' => 'icon-dashboard',
-    ],
 
-    /**
-     * Leads.
-     */
+    // =========================================================
+    // GROUP 1: Sales & Growth (Pre-Project) — sort 100-199
+    // =========================================================
+
     [
         'key' => 'leads',
         'name' => 'admin::app.layouts.leads',
         'route' => 'admin.leads.index',
-        'sort' => 2,
+        'sort' => 101,
         'icon-class' => 'icon-leads',
+        'group' => 'Sales & Growth',
     ],
 
-    /**
-     * Quotes.
-     */
+    [
+        'key' => 'it_sales',
+        'name' => 'IT Sales',
+        'route' => 'admin.it_sales.lifecycle.statuses.index',
+        'sort' => 102,
+        'icon-class' => 'icon-note',
+        'group' => 'Sales & Growth',
+    ], [
+        'key' => 'it_sales.services_catalog',
+        'name' => 'Services Catalog',
+        'route' => 'admin.it_sales.services.index',
+        'sort' => 1,
+        'icon-class' => 'icon-product',
+    ], [
+        'key' => 'it_sales.proposals',
+        'name' => 'Proposals',
+        'route' => 'admin.it_sales.proposals.index',
+        'sort' => 2,
+        'icon-class' => 'icon-note',
+    ], [
+        'key' => 'it_sales.requirements',
+        'name' => 'Requirements',
+        'route' => 'admin.it_sales.requirements.index',
+        'sort' => 3,
+        'icon-class' => 'icon-note',
+    ], [
+        'key' => 'it_sales.estimations',
+        'name' => 'Estimations',
+        'route' => 'admin.it_sales.estimations.index',
+        'sort' => 4,
+        'icon-class' => 'icon-note',
+    ], [
+        'key' => 'it_sales.lifecycle_statuses',
+        'name' => 'Lifecycle Statuses',
+        'route' => 'admin.it_sales.lifecycle.statuses.index',
+        'sort' => 5,
+        'icon-class' => 'icon-settings-pipeline',
+    ], [
+        'key' => 'it_sales.project_handovers',
+        'name' => 'Project Handovers',
+        'route' => 'admin.it_sales.handovers.index',
+        'sort' => 6,
+        'icon-class' => 'icon-note',
+    ], [
+        'key' => 'it_sales.approvals',
+        'name' => 'Approvals',
+        'route' => 'admin.it_sales.approvals.index',
+        'sort' => 7,
+        'icon-class' => 'icon-activity',
+    ],
+
     [
         'key' => 'quotes',
         'name' => 'admin::app.layouts.quotes',
         'route' => 'admin.quotes.index',
-        'sort' => 3,
+        'sort' => 103,
         'icon-class' => 'icon-quote',
+        'group' => 'Sales & Growth',
     ],
 
-    /**
-     * Emails.
-     */
-    [
-        'key' => 'mail',
-        'name' => 'admin::app.layouts.mail.title',
-        'route' => 'admin.mail.index',
-        'params' => ['route' => 'inbox'],
-        'sort' => 4,
-        'icon-class' => 'icon-mail',
-    ], [
-        'key' => 'mail.inbox',
-        'name' => 'admin::app.layouts.mail.inbox',
-        'route' => 'admin.mail.index',
-        'params' => ['route' => 'inbox'],
-        'sort' => 2,
-        'icon-class' => '',
-    ], [
-        'key' => 'mail.draft',
-        'name' => 'admin::app.layouts.mail.draft',
-        'route' => 'admin.mail.index',
-        'params' => ['route' => 'draft'],
-        'sort' => 3,
-        'icon-class' => '',
-    ], [
-        'key' => 'mail.outbox',
-        'name' => 'admin::app.layouts.mail.outbox',
-        'route' => 'admin.mail.index',
-        'params' => ['route' => 'outbox'],
-        'sort' => 4,
-        'icon-class' => '',
-    ], [
-        'key' => 'mail.sent',
-        'name' => 'admin::app.layouts.mail.sent',
-        'route' => 'admin.mail.index',
-        'params' => ['route' => 'sent'],
-        'sort' => 4,
-        'icon-class' => '',
-    ], [
-        'key' => 'mail.trash',
-        'name' => 'admin::app.layouts.mail.trash',
-        'route' => 'admin.mail.index',
-        'params' => ['route' => 'trash'],
-        'sort' => 5,
-        'icon-class' => '',
-    ],
-    // , [
-    //     'key'        => 'mail.setting',
-    //     'name'       => 'admin::app.layouts.mail.setting',
-    //     'route'      => 'admin.mail.index',
-    //     'params'     => ['route' => 'setting'],
-    //     'sort'       => 5,
-    // ]
-
-    /**
-     * Activities.
-     */
-    [
-        'key' => 'activities',
-        'name' => 'admin::app.layouts.activities',
-        'route' => 'admin.activities.index',
-        'sort' => 5,
-        'icon-class' => 'icon-activity',
-    ],
-
-    /**
-     * Contacts.
-     */
     [
         'key' => 'contacts',
         'name' => 'admin::app.layouts.contacts',
         'route' => 'admin.contacts.persons.index',
-        'sort' => 6,
+        'sort' => 104,
         'icon-class' => 'icon-contact',
+        'group' => 'Sales & Growth',
     ], [
         'key' => 'contacts.persons',
         'name' => 'admin::app.layouts.persons',
@@ -122,60 +96,94 @@ return [
         'icon-class' => '',
     ],
 
-    /**
-     * Services.
-     */
-    [
-        'key' => 'products',
-        'name' => 'admin::app.layouts.products',
-        'route' => 'admin.products.index',
-        'sort' => 7,
-        'icon-class' => 'icon-product',
-    ],
+    // =========================================================
+    // GROUP 2: Operations & Delivery (Execution) — sort 200-299
+    // =========================================================
 
-    /**
-     * Projects.
-     */
     [
         'key' => 'projects',
         'name' => 'admin::app.layouts.projects',
         'route' => 'admin.projects.index',
-        'sort' => 8,
+        'sort' => 201,
         'icon-class' => 'icon-note',
+        'group' => 'Operations & Delivery',
     ],
 
-    /**
-     * Tasks.
-     */
+    [
+        'key' => 'products',
+        'name' => 'admin::app.layouts.products',
+        'route' => 'admin.products.index',
+        'sort' => 202,
+        'icon-class' => 'icon-product',
+        'group' => 'Operations & Delivery',
+    ],
+
     [
         'key' => 'tasks',
         'name' => 'admin::app.layouts.tasks',
         'route' => 'admin.tasks.index',
-        'sort' => 9,
+        'sort' => 203,
         'icon-class' => 'icon-activity',
+        'group' => 'Operations & Delivery',
     ],
 
-    /**
-     * Timesheets.
-     */
+    [
+        'key' => 'activities',
+        'name' => 'admin::app.layouts.activities',
+        'route' => 'admin.activities.index',
+        'sort' => 204,
+        'icon-class' => 'icon-activity',
+        'group' => 'Operations & Delivery',
+    ],
+
+    // =========================================================
+    // GROUP 3: Resource Management (Tracking) — sort 300-399
+    // =========================================================
+
     [
         'key' => 'timesheets',
         'name' => 'admin::app.layouts.timesheets',
         'route' => 'admin.timesheets.index',
-        'sort' => 10,
+        'sort' => 301,
         'icon-class' => 'icon-calendar',
+        'group' => 'Resource Management',
     ],
 
-    /**
-     * Settings.
-     */
+    [
+        'key' => 'dashboard',
+        'name' => 'admin::app.layouts.dashboard',
+        'route' => 'admin.dashboard.index',
+        'sort' => 302,
+        'icon-class' => 'icon-dashboard',
+        'group' => 'Resource Management',
+    ],
+
+    // =========================================================
+    // GROUP 4: Communication — sort 400-499
+    // =========================================================
+
+    // Mail Module is safely deprecated — hidden from sidebar.
+    // Uncomment below to re-enable when a proper mail solution is in place.
+    // [
+    //     'key'        => 'mail',
+    //     'name'       => 'admin::app.layouts.mail',
+    //     'route'      => 'admin.mail.index.index',
+    //     'sort'       => 401,
+    //     'icon-class' => 'icon-mail',
+    //     'group'      => 'Communication',
+    // ],
+
+    // =========================================================
+    // GROUP 5: System Administration (Footer) — sort 900+
+    // =========================================================
+
     [
         'key' => 'settings',
         'name' => 'admin::app.layouts.settings',
         'route' => 'admin.settings.index',
-        'sort' => 11,
+        'sort' => 901,
         'icon-class' => 'icon-setting',
-
+        'group' => 'System Administration',
     ], [
         'key' => 'settings.user',
         'name' => 'admin::app.layouts.user',
@@ -212,13 +220,6 @@ return [
         'sort' => 4,
         'icon-class' => 'icon-user',
     ], [
-        'key' => 'settings.user.employees',
-        'name' => 'Employees',
-        'info' => 'Manage all employees in the CRM',
-        'route' => 'company.core.user.employees.index',
-        'sort' => 4,
-        'icon-class' => 'icon-user',
-    ], [
         'key' => 'settings.organization',
         'name' => 'Organization',
         'info' => 'Manage hierarchical departments and designations',
@@ -244,7 +245,7 @@ return [
         'name' => 'admin::app.layouts.lead',
         'info' => 'admin::app.layouts.lead-info',
         'route' => 'admin.settings.pipelines.index',
-        'sort' => 2,
+        'sort' => 3,
         'icon-class' => '',
     ], [
         'key' => 'settings.lead.pipelines',
@@ -272,8 +273,8 @@ return [
         'name' => 'admin::app.layouts.warehouse',
         'info' => 'admin::app.layouts.warehouses-info',
         'route' => 'admin.settings.pipelines.index',
+        'sort' => 4,
         'icon-class' => '',
-        'sort' => 2,
     ], [
         'key' => 'settings.warehouse.warehouses',
         'name' => 'admin::app.layouts.warehouses',
@@ -286,7 +287,7 @@ return [
         'name' => 'admin::app.layouts.automation',
         'info' => 'admin::app.layouts.automation-info',
         'route' => 'admin.settings.attributes.index',
-        'sort' => 3,
+        'sort' => 5,
         'icon-class' => '',
     ], [
         'key' => 'settings.automation.attributes',
@@ -295,27 +296,6 @@ return [
         'route' => 'admin.settings.attributes.index',
         'sort' => 1,
         'icon-class' => 'icon-attribute',
-    ], [
-        'key' => 'settings.automation.email_templates',
-        'name' => 'admin::app.layouts.email-templates',
-        'info' => 'admin::app.layouts.email-templates-info',
-        'route' => 'admin.settings.email_templates.index',
-        'sort' => 2,
-        'icon-class' => 'icon-settings-mail',
-    ], [
-        'key' => 'settings.automation.events',
-        'name' => 'admin::app.layouts.events',
-        'info' => 'admin::app.layouts.events-info',
-        'route' => 'admin.settings.marketing.events.index',
-        'sort' => 2,
-        'icon-class' => 'icon-calendar',
-    ], [
-        'key' => 'settings.automation.campaigns',
-        'name' => 'admin::app.layouts.campaigns',
-        'info' => 'admin::app.layouts.campaigns-info',
-        'route' => 'admin.settings.marketing.campaigns.index',
-        'sort' => 2,
-        'icon-class' => 'icon-note',
     ], [
         'key' => 'settings.automation.webhooks',
         'name' => 'admin::app.layouts.webhooks',
@@ -330,8 +310,7 @@ return [
         'route' => 'admin.settings.workflows.index',
         'sort' => 3,
         'icon-class' => 'icon-settings-flow',
-    ],
-    [
+    ], [
         'key' => 'settings.automation.data_transfer',
         'name' => 'admin::app.layouts.data_transfer',
         'info' => 'admin::app.layouts.data_transfer_info',
@@ -343,7 +322,7 @@ return [
         'name' => 'admin::app.layouts.other-settings',
         'info' => 'admin::app.layouts.other-settings-info',
         'route' => 'admin.settings.tags.index',
-        'sort' => 4,
+        'sort' => 6,
         'icon-class' => 'icon-settings',
     ], [
         'key' => 'settings.other_settings.tags',
@@ -354,15 +333,13 @@ return [
         'icon-class' => 'icon-settings-tag',
     ],
 
-    /**
-     * Configuration.
-     */
     [
         'key' => 'configuration',
         'name' => 'admin::app.layouts.configuration',
         'route' => 'admin.configuration.index',
-        'sort' => 12,
+        'sort' => 902,
         'icon-class' => 'icon-configuration',
+        'group' => 'System Administration',
     ],
 
 ];
