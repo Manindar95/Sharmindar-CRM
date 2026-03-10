@@ -24,7 +24,7 @@
                 <x-admin::form.control-group.label>Lead</x-admin::form.control-group.label>
                 <x-admin::form.control-group.control type="select" name="lead_id" value="{{ $lead_id }}" label="Lead">
                     <option value="">Select Lead</option>
-                    @foreach(\Webkul\Lead\Models\Lead::all() as $lead)
+                    @foreach(\Sharmindar\Core\Lead\Models\Lead::all() as $lead)
                         <option value="{{ $lead->id }}" {{ $lead_id == $lead->id ? 'selected' : '' }}>{{ $lead->title }}</option>
                     @endforeach
                 </x-admin::form.control-group.control>

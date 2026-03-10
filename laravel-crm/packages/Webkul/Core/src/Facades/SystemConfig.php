@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Facades;
+namespace Sharmindar\Core\Core\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

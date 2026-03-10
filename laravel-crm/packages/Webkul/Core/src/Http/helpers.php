@@ -1,11 +1,11 @@
 <?php
 
-use Webkul\Core\Acl;
-use Webkul\Core\Core;
-use Webkul\Core\Menu;
-use Webkul\Core\SystemConfig;
-use Webkul\Core\ViewRenderEventManager;
-use Webkul\Core\Vite;
+use Sharmindar\Core\Core\Acl;
+use Sharmindar\Core\Core\Core;
+use Sharmindar\Core\Core\Menu;
+use Sharmindar\Core\Core\SystemConfig;
+use Sharmindar\Core\Core\ViewRenderEventManager;
+use Sharmindar\Core\Core\Vite;
 
 if (! function_exists('core')) {
     /**

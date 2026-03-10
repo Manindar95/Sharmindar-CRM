@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\DataGrid\Repositories;
+namespace Sharmindar\Core\DataGrid\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
-use Webkul\DataGrid\Contracts\SavedFilter;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\DataGrid\Contracts\SavedFilter;
 
 class SavedFilterRepository extends Repository
 {

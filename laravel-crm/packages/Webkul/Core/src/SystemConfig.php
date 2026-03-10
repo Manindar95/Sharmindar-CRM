@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Core;
+namespace Sharmindar\Core\Core;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
-use Webkul\Core\Repositories\CoreConfigRepository;
-use Webkul\Core\SystemConfig\Item;
+use Sharmindar\Core\Core\Repositories\CoreConfigRepository;
+use Sharmindar\Core\Core\SystemConfig\Item;
 
 class SystemConfig
 {

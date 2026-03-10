@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Core\Models;
+namespace Sharmindar\Core\Core\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Core\Contracts\Country as CountryContract;
+use Sharmindar\Core\Core\Contracts\Country as CountryContract;
 
 class Country extends Model implements CountryContract
 {

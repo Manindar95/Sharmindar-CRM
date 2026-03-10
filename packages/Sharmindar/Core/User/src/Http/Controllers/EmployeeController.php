@@ -5,14 +5,14 @@ namespace Sharmindar\Core\User\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\User\Repositories\UserRepository;
-use Webkul\User\Repositories\RoleRepository;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\User\Repositories\UserRepository;
+use Sharmindar\Core\User\Repositories\RoleRepository;
 use Illuminate\Support\Facades\Log;
 use Sharmindar\Core\User\Models\EmployeeProfile;
 use Sharmindar\Core\User\Models\UserMeta;
 use Sharmindar\Core\Department\Models\Department;
-use Webkul\User\Models\UserProxy;
+use Sharmindar\Core\User\Models\UserProxy;
 use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller

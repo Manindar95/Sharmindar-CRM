@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Warehouse\Repositories;
+namespace Sharmindar\Core\Warehouse\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Warehouse\Contracts\Warehouse;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\Warehouse\Contracts\Warehouse;
 
 class WarehouseRepository extends Repository
 {
@@ -47,7 +47,7 @@ class WarehouseRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Warehouse\Contracts\Warehouse
+     * @return \Sharmindar\Core\Warehouse\Contracts\Warehouse
      */
     public function create(array $data)
     {
@@ -65,7 +65,7 @@ class WarehouseRepository extends Repository
      *
      * @param  int  $id
      * @param  array  $attribute
-     * @return \Webkul\Warehouse\Contracts\Warehouse
+     * @return \Sharmindar\Core\Warehouse\Contracts\Warehouse
      */
     public function update(array $data, $id, $attributes = [])
     {

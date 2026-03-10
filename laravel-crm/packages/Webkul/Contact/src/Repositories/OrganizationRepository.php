@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Contact\Repositories;
+namespace Sharmindar\Core\Contact\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\DB;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Contact\Contracts\Organization;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Contact\Contracts\Organization;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class OrganizationRepository extends Repository
 {
@@ -37,7 +37,7 @@ class OrganizationRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Contact\Contracts\Organization
+     * @return \Sharmindar\Core\Contact\Contracts\Organization
      */
     public function create(array $data)
     {
@@ -59,7 +59,7 @@ class OrganizationRepository extends Repository
      *
      * @param  int  $id
      * @param  array  $attribute
-     * @return \Webkul\Contact\Contracts\Organization
+     * @return \Sharmindar\Core\Contact\Contracts\Organization
      */
     public function update(array $data, $id, $attributes = [])
     {

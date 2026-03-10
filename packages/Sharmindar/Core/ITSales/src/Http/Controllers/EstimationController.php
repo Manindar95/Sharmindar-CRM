@@ -6,7 +6,7 @@ use Sharmindar\Core\ITSales\Models\Estimation;
 use Sharmindar\Core\ITSales\Models\EstimationItem;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Webkul\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
 
 class EstimationController extends Controller
 {

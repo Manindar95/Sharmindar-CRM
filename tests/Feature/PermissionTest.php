@@ -107,7 +107,7 @@ it('unauthenticated user cannot access tasks', function () {
 });
 
 it('widget canAccess respects empty permissions as accessible', function () {
-    $widget = new class extends \Company\Core\Dashboard\Widgets\BaseWidget {
+    $widget = new class extends \Sharmindar\Core\Dashboard\Widgets\BaseWidget {
         public function getId(): string {
                     return 'open.widget';
                 }

@@ -12,13 +12,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Webkul\\User\\": "src/"
+            "Sharmindar\Core\\User\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\User\\Providers\\UserServiceProvider"
+                "Sharmindar\Core\\User\\Providers\\UserServiceProvider"
             ],
             "aliases": {}
         }

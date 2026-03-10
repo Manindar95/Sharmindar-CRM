@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\Activity\DataGrids;
 
 use Illuminate\Support\Facades\DB;
-use Webkul\DataGrid\DataGrid;
+use Sharmindar\Core\DataGrid\DataGrid;
 
 class ActivityLogDataGrid extends DataGrid
 {
@@ -32,11 +32,11 @@ class ActivityLogDataGrid extends DataGrid
     }
 
     /**
-     * Add columns.
+     * Prepare columns.
      *
      * @return void
      */
-    public function addColumns()
+    public function prepareColumns()
     {
         $this->addColumn([
             'index' => 'id',

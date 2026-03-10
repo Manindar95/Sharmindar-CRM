@@ -1,18 +1,18 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace Sharmindar\Core\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Webkul\Admin\DataGrids\Settings\AttributeDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Contracts\Validations\Code;
+use Sharmindar\Core\Admin\DataGrids\Settings\AttributeDataGrid;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Requests\MassDestroyRequest;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Contracts\Validations\Code;
 
 class AttributeController extends Controller
 {

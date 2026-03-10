@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Database\Seeders\User;
+namespace Sharmindar\Core\Installer\Database\Seeders\User;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

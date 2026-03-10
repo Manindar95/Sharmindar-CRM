@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\Department\DataGrids;
 
 use Illuminate\Support\Facades\DB;
-use Webkul\DataGrid\DataGrid;
+use Sharmindar\Core\DataGrid\DataGrid;
 
 class DepartmentDataGrid extends DataGrid
 {

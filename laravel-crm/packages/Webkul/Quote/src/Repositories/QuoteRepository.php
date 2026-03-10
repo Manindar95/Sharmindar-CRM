@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Quote\Repositories;
+namespace Sharmindar\Core\Quote\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Str;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Quote\Contracts\Quote;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\Quote\Contracts\Quote;
 
 class QuoteRepository extends Repository
 {
@@ -50,7 +50,7 @@ class QuoteRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Quote\Contracts\Quote
+     * @return \Sharmindar\Core\Quote\Contracts\Quote
      */
     public function create(array $data)
     {
@@ -74,7 +74,7 @@ class QuoteRepository extends Repository
      *
      * @param  int  $id
      * @param  array  $attribute
-     * @return \Webkul\Quote\Contracts\Quote
+     * @return \Sharmindar\Core\Quote\Contracts\Quote
      */
     public function update(array $data, $id, $attributes = [])
     {

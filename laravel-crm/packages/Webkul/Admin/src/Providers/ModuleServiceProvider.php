@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Providers;
+namespace Sharmindar\Core\Admin\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {

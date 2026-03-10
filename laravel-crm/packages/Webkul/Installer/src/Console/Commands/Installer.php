@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Installer\Console\Commands;
+namespace Sharmindar\Core\Installer\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\File;
-use Webkul\Core\Providers\CoreServiceProvider;
-use Webkul\Installer\Database\Seeders\DatabaseSeeder as KrayinDatabaseSeeder;
-use Webkul\Installer\Events\ComposerEvents;
+use Sharmindar\Core\Core\Providers\CoreServiceProvider;
+use Sharmindar\Core\Installer\Database\Seeders\DatabaseSeeder as KrayinDatabaseSeeder;
+use Sharmindar\Core\Installer\Events\ComposerEvents;
 
 use function Laravel\Prompts\password;
 use function Laravel\Prompts\select;

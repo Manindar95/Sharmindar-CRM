@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Http\Controllers;
+namespace Sharmindar\Core\Core\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

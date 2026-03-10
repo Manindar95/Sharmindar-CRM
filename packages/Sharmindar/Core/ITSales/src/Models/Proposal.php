@@ -3,9 +3,9 @@
 namespace Sharmindar\Core\ITSales\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Models\Lead;
-use Webkul\Quote\Models\Quote;
-use Webkul\User\Models\User;
+use Sharmindar\Core\Lead\Models\Lead;
+use Sharmindar\Core\Quote\Models\Quote;
+use Sharmindar\Core\User\Models\User;
 
 class Proposal extends Model
 {

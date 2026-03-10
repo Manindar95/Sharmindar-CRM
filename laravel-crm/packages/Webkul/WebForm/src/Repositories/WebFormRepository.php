@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\WebForm\Repositories;
+namespace Sharmindar\Core\WebForm\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Str;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\WebForm\Contracts\WebForm;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\WebForm\Contracts\WebForm;
 
 class WebFormRepository extends Repository
 {
@@ -34,7 +34,7 @@ class WebFormRepository extends Repository
     /**
      * Create Web Form.
      *
-     * @return \Webkul\WebForm\Contracts\WebForm
+     * @return \Sharmindar\Core\WebForm\Contracts\WebForm
      */
     public function create(array $data)
     {
@@ -56,7 +56,7 @@ class WebFormRepository extends Repository
      *
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\WebForm\Contracts\WebForm
+     * @return \Sharmindar\Core\WebForm\Contracts\WebForm
      */
     public function update(array $data, $id, $attribute = 'id')
     {

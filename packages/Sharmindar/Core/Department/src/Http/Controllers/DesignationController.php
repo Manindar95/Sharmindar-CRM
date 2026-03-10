@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\Department\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Webkul\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
 use Sharmindar\Core\Department\Models\Designation;
 use Sharmindar\Core\Department\Models\Department;
 

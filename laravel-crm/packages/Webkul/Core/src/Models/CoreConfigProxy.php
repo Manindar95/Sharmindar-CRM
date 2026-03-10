@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Models;
+namespace Sharmindar\Core\Core\Models;
 
 use Konekt\Concord\Proxies\ModelProxy;
 

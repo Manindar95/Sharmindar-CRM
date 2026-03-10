@@ -1,0 +1,6 @@
+ID: 1 | Name: New | Code: new | Pipeline: 1 | Order: 1
+ID: 2 | Name: Follow Up | Code: follow-up | Pipeline: 1 | Order: 2
+ID: 3 | Name: Prospect | Code: prospect | Pipeline: 1 | Order: 3
+ID: 4 | Name: Negotiation | Code: negotiation | Pipeline: 1 | Order: 4
+ID: 5 | Name: Won | Code: won | Pipeline: 1 | Order: 5
+ID: 6 | Name: Lost | Code: lost | Pipeline: 1 | Order: 6

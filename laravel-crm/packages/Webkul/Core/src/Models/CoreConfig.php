@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Core\Models;
+namespace Sharmindar\Core\Core\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Core\Contracts\CoreConfig as CoreConfigContract;
+use Sharmindar\Core\Core\Contracts\CoreConfig as CoreConfigContract;
 
 class CoreConfig extends Model implements CoreConfigContract
 {

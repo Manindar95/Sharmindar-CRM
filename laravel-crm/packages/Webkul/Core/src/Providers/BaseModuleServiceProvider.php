@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Providers;
+namespace Sharmindar\Core\Core\Providers;
 
 use Konekt\Concord\BaseModuleServiceProvider as ConcordBaseModuleServiceProvider;
 

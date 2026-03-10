@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Acl;
+namespace Sharmindar\Core\Core\Acl;
 
 use Illuminate\Support\Collection;
 

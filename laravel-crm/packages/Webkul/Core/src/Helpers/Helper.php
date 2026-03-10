@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Helpers;
+namespace Sharmindar\Core\Core\Helpers;
 
 class Helper
 {

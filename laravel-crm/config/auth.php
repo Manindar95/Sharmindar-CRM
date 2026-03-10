@@ -62,7 +62,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model'  => Webkul\User\Models\User::class,
+            'model'  => Sharmindar\Core\User\Models\User::class,
         ],
     ],
 

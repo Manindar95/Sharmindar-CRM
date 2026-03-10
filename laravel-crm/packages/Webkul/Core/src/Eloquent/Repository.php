@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Eloquent;
+namespace Sharmindar\Core\Core\Eloquent;
 
 use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;

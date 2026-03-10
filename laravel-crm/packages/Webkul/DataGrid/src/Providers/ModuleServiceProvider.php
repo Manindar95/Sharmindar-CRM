@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\DataGrid\Providers;
+namespace Sharmindar\Core\DataGrid\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\DataGrid\Models\SavedFilter::class,
+        \Sharmindar\Core\DataGrid\Models\SavedFilter::class,
     ];
 }

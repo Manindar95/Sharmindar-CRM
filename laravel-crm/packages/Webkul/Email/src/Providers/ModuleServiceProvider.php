@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Email\Providers;
+namespace Sharmindar\Core\Email\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Email\Models\Email::class,
-        \Webkul\Email\Models\Attachment::class,
+        \Sharmindar\Core\Email\Models\Email::class,
+        \Sharmindar\Core\Email\Models\Attachment::class,
     ];
 }

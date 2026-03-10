@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\WebForm\Providers;
+namespace Sharmindar\Core\WebForm\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\WebForm\Models\WebForm::class,
-        \Webkul\WebForm\Models\WebFormAttribute::class,
+        \Sharmindar\Core\WebForm\Models\WebForm::class,
+        \Sharmindar\Core\WebForm\Models\WebFormAttribute::class,
     ];
 }

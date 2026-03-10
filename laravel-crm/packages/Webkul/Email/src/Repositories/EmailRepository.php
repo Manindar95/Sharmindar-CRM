@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Email\Repositories;
+namespace Sharmindar\Core\Email\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Email\Contracts\Email;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\Email\Contracts\Email;
 
 class EmailRepository extends Repository
 {
@@ -28,7 +28,7 @@ class EmailRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Email\Contracts\Email
+     * @return \Sharmindar\Core\Email\Contracts\Email
      */
     public function create(array $data)
     {
@@ -64,7 +64,7 @@ class EmailRepository extends Repository
      *
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\Email\Contracts\Email
+     * @return \Sharmindar\Core\Email\Contracts\Email
      */
     public function update(array $data, $id, $attribute = 'id')
     {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Activity\Providers;
+namespace Sharmindar\Core\Activity\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Activity\Models\Activity::class,
-        \Webkul\Activity\Models\File::class,
-        \Webkul\Activity\Models\Participant::class,
+        \Sharmindar\Core\Activity\Models\Activity::class,
+        \Sharmindar\Core\Activity\Models\File::class,
+        \Sharmindar\Core\Activity\Models\Participant::class,
     ];
 }

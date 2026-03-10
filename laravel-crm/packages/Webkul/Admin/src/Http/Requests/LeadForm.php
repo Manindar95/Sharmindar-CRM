@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Admin\Http\Requests;
+namespace Sharmindar\Core\Admin\Http\Requests;
 
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Contracts\Validations\Decimal;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Contracts\Validations\Decimal;
 
 class LeadForm extends FormRequest
 {

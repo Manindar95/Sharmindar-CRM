@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Warehouse\Providers;
+namespace Sharmindar\Core\Warehouse\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Warehouse\Models\Location::class,
-        \Webkul\Warehouse\Models\Warehouse::class,
+        \Sharmindar\Core\Warehouse\Models\Location::class,
+        \Sharmindar\Core\Warehouse\Models\Warehouse::class,
     ];
 }

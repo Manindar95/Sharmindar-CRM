@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Quote\Repositories;
+namespace Sharmindar\Core\Quote\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Product\Repositories\ProductRepository;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\Product\Repositories\ProductRepository;
 
 class QuoteItemRepository extends Repository
 {
@@ -27,7 +27,7 @@ class QuoteItemRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Quote\Contracts\QuoteItem';
+        return 'Sharmindar\Core\Quote\Contracts\QuoteItem';
     }
 
     /**
@@ -52,7 +52,7 @@ class QuoteItemRepository extends Repository
     /**
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\Quote\Contracts\QuoteItem
+     * @return \Sharmindar\Core\Quote\Contracts\QuoteItem
      */
     public function update(array $data, $id, $attribute = 'id')
     {

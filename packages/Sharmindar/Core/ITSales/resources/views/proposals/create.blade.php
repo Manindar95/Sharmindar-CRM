@@ -58,7 +58,7 @@
                             label="Lead"
                         >
                             <option value="">Select Lead</option>
-                            @foreach(\Webkul\Lead\Models\Lead::all() as $lead)
+                            @foreach(\Sharmindar\Core\Lead\Models\Lead::all() as $lead)
                                 <option value="{{ $lead->id }}" {{ (old('lead_id') ?? $lead_id) == $lead->id ? 'selected' : '' }}>
                                     {{ $lead->title }}
                                 </option>

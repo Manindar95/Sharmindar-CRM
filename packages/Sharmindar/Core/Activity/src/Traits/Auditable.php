@@ -2,7 +2,7 @@
 
 namespace Sharmindar\Core\Activity\Traits;
 
-use App\Models\User; // Standard usage or Webkul\User\Models\User
+use App\Models\User; // Standard usage or Sharmindar\Core\User\Models\User
 use Sharmindar\Core\Activity\Models\AuditTrail;
 use Illuminate\Support\Arr;
 

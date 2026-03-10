@@ -2,7 +2,7 @@
 
 namespace Sharmindar\Core\Settings\Helpers;
 
-use Webkul\Core\Core as BaseCore;
+use Sharmindar\Core as BaseCore;
 
 class Core
 {

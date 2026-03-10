@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Core\Contracts;
+namespace Sharmindar\Core\Core\Contracts;
 
 interface CoreConfig {}

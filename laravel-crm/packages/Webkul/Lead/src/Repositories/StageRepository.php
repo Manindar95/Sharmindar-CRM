@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Lead\Repositories;
+namespace Sharmindar\Core\Lead\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class StageRepository extends Repository
 {
@@ -13,6 +13,6 @@ class StageRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Lead\Contracts\Stage';
+        return 'Sharmindar\Core\Lead\Contracts\Stage';
     }
 }

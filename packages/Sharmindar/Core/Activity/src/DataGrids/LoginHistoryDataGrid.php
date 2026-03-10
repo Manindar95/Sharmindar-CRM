@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\Activity\DataGrids;
 
 use Illuminate\Support\Facades\DB;
-use Webkul\DataGrid\DataGrid;
+use Sharmindar\Core\DataGrid\DataGrid;
 
 class LoginHistoryDataGrid extends DataGrid
 {

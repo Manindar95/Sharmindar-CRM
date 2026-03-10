@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Core\Repositories;
+namespace Sharmindar\Core\Core\Repositories;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Webkul\Core\Contracts\CoreConfig;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Contracts\CoreConfig;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class CoreConfigRepository extends Repository
 {

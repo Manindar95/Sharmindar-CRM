@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Automation\Providers;
+namespace Sharmindar\Core\Automation\Providers;
 
-use Webkul\Automation\Models\Webhook;
-use Webkul\Automation\Models\Workflow;
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Automation\Models\Webhook;
+use Sharmindar\Core\Automation\Models\Workflow;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {

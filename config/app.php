@@ -198,41 +198,32 @@ return [
         App\Providers\RouteServiceProvider::class ,
 
         /*
-         * Webkul Service Providers...
+         * Sharmindar CRM Service Providers...
          */
-        Webkul\Activity\Providers\ActivityServiceProvider::class ,
-        Webkul\Admin\Providers\AdminServiceProvider::class ,
-        Webkul\Attribute\Providers\AttributeServiceProvider::class ,
-        Webkul\Automation\Providers\WorkflowServiceProvider::class ,
-        Webkul\Contact\Providers\ContactServiceProvider::class ,
-        Webkul\Core\Providers\CoreServiceProvider::class ,
-        Webkul\DataGrid\Providers\DataGridServiceProvider::class ,
-        Webkul\DataTransfer\Providers\DataTransferServiceProvider::class ,
-        Webkul\EmailTemplate\Providers\EmailTemplateServiceProvider::class ,
-        Webkul\Email\Providers\EmailServiceProvider::class ,
-        Webkul\Marketing\Providers\MarketingServiceProvider::class ,
-        Webkul\Installer\Providers\InstallerServiceProvider::class ,
-        Webkul\Lead\Providers\LeadServiceProvider::class ,
-        Webkul\Product\Providers\ProductServiceProvider::class ,
-        Webkul\Quote\Providers\QuoteServiceProvider::class ,
-        Webkul\Tag\Providers\TagServiceProvider::class ,
-        Webkul\User\Providers\UserServiceProvider::class ,
-        Webkul\Warehouse\Providers\WarehouseServiceProvider::class ,
-        Webkul\WebForm\Providers\WebFormServiceProvider::class ,
-
-        /*
-         * Sharmindar Core Service Providers...
-         */
+        Sharmindar\Core\Activity\Providers\ActivityServiceProvider::class ,
+        Sharmindar\Core\Admin\Providers\AdminServiceProvider::class ,
+        Sharmindar\Core\Attribute\Providers\AttributeServiceProvider::class ,
+        Sharmindar\Core\Automation\Providers\WorkflowServiceProvider::class ,
+        Sharmindar\Core\Contact\Providers\ContactServiceProvider::class ,
+        Sharmindar\Core\Providers\CoreServiceProvider::class ,
+        Sharmindar\Core\DataGrid\Providers\DataGridServiceProvider::class ,
+        Sharmindar\Core\DataTransfer\Providers\DataTransferServiceProvider::class ,
+        Sharmindar\Core\EmailTemplate\Providers\EmailTemplateServiceProvider::class ,
+        Sharmindar\Core\Email\Providers\EmailServiceProvider::class ,
+        Sharmindar\Core\Marketing\Providers\MarketingServiceProvider::class ,
+        Sharmindar\Core\Installer\Providers\InstallerServiceProvider::class ,
+        Sharmindar\Core\Lead\Providers\LeadServiceProvider::class ,
+        Sharmindar\Core\Product\Providers\ProductServiceProvider::class ,
+        Sharmindar\Core\Quote\Providers\QuoteServiceProvider::class ,
+        Sharmindar\Core\Tag\Providers\TagServiceProvider::class ,
         Sharmindar\Core\User\Providers\UserServiceProvider::class ,
+        Sharmindar\Core\Warehouse\Providers\WarehouseServiceProvider::class ,
+        Sharmindar\Core\WebForm\Providers\WebFormServiceProvider::class ,
+
         Sharmindar\Core\Department\Providers\DepartmentServiceProvider::class ,
         Sharmindar\Core\Settings\Providers\SettingsServiceProvider::class ,
-        Sharmindar\Core\Activity\Providers\ActivityServiceProvider::class ,
         Sharmindar\Core\Dashboard\Providers\DashboardServiceProvider::class ,
         Sharmindar\Core\ITSales\Providers\ITSalesServiceProvider::class ,
-
-        /*
-         * Sharmindar Core Service Providers...
-         */
         Sharmindar\Core\Providers\CoreServiceProvider::class ,
     ])->toArray(),
 
@@ -250,9 +241,9 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         'Bouncer' => Silber\Bouncer\BouncerFacade::class ,
         'Redis' => Illuminate\Support\Facades\Redis::class ,
-        'Menu' => Webkul\Core\Facades\Menu::class ,
-        'Report' => Webkul\Core\Facades\Report::class ,
-        'Core' => Webkul\Core\Facades\Core::class ,
+        'Menu' => Sharmindar\Core\Facades\Menu::class ,
+        'Report' => Sharmindar\Core\Facades\Core::class , // Report facade seems missing, using Core as fallback or it might be renamed
+        'Core' => Sharmindar\Core\Facades\Core::class ,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class ,
         'CompanyDashboard' => Sharmindar\Core\Dashboard\Facades\Dashboard::class ,
     ])->toArray(),

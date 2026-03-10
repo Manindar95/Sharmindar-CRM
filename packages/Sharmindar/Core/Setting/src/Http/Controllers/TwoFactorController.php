@@ -5,7 +5,7 @@ namespace Sharmindar\Core\Setting\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PragmaRX\Google2FA\Google2FA;
-use Webkul\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
 
 class TwoFactorController extends Controller
 {
@@ -39,7 +39,7 @@ class TwoFactorController extends Controller
         // Technically we should fetch the user without full auth acting
         // For simplicity in this CRM context, we will login the user to auth()->user()
         // but restrict them via middleware if 2fa isn't complete. Let's do a direct lookup.
-        $user = \Webkul\User\Models\User::find($userId);
+        $user = \Sharmindar\Core\User\Models\User::find($userId);
 
         if (!$user) {
             return redirect()->route('admin.session.create');

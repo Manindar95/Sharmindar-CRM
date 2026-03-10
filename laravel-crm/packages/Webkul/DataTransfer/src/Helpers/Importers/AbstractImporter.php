@@ -1,22 +1,22 @@
 <?php
 
-namespace Webkul\DataTransfer\Helpers\Importers;
+namespace Sharmindar\Core\DataTransfer\Helpers\Importers;
 
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Event;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Contracts\Validations\Decimal;
-use Webkul\DataTransfer\Contracts\Import as ImportContract;
-use Webkul\DataTransfer\Contracts\ImportBatch as ImportBatchContract;
-use Webkul\DataTransfer\Helpers\Import;
-use Webkul\DataTransfer\Jobs\Import\Completed as CompletedJob;
-use Webkul\DataTransfer\Jobs\Import\ImportBatch as ImportBatchJob;
-use Webkul\DataTransfer\Jobs\Import\IndexBatch as IndexBatchJob;
-use Webkul\DataTransfer\Jobs\Import\Indexing as IndexingJob;
-use Webkul\DataTransfer\Jobs\Import\LinkBatch as LinkBatchJob;
-use Webkul\DataTransfer\Jobs\Import\Linking as LinkingJob;
-use Webkul\DataTransfer\Repositories\ImportBatchRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Contracts\Validations\Decimal;
+use Sharmindar\Core\DataTransfer\Contracts\Import as ImportContract;
+use Sharmindar\Core\DataTransfer\Contracts\ImportBatch as ImportBatchContract;
+use Sharmindar\Core\DataTransfer\Helpers\Import;
+use Sharmindar\Core\DataTransfer\Jobs\Import\Completed as CompletedJob;
+use Sharmindar\Core\DataTransfer\Jobs\Import\ImportBatch as ImportBatchJob;
+use Sharmindar\Core\DataTransfer\Jobs\Import\IndexBatch as IndexBatchJob;
+use Sharmindar\Core\DataTransfer\Jobs\Import\Indexing as IndexingJob;
+use Sharmindar\Core\DataTransfer\Jobs\Import\LinkBatch as LinkBatchJob;
+use Sharmindar\Core\DataTransfer\Jobs\Import\Linking as LinkingJob;
+use Sharmindar\Core\DataTransfer\Repositories\ImportBatchRepository;
 
 abstract class AbstractImporter
 {
@@ -83,7 +83,7 @@ abstract class AbstractImporter
     /**
      * Error helper instance.
      *
-     * @var \Webkul\DataTransfer\Helpers\Error
+     * @var \Sharmindar\Core\DataTransfer\Helpers\Error
      */
     protected $errorHelper;
 
@@ -95,7 +95,7 @@ abstract class AbstractImporter
     /**
      * Source instance.
      *
-     * @var \Webkul\DataTransfer\Helpers\Source
+     * @var \Sharmindar\Core\DataTransfer\Helpers\Source
      */
     protected $source;
 
@@ -173,7 +173,7 @@ abstract class AbstractImporter
     /**
      * Import instance.
      *
-     * @param  \Webkul\DataTransfer\Helpers\Source  $errorHelper
+     * @param  \Sharmindar\Core\DataTransfer\Helpers\Source  $errorHelper
      */
     public function setSource($source)
     {
@@ -185,7 +185,7 @@ abstract class AbstractImporter
     /**
      * Import instance.
      *
-     * @param  \Webkul\DataTransfer\Helpers\Error  $errorHelper
+     * @param  \Sharmindar\Core\DataTransfer\Helpers\Error  $errorHelper
      */
     public function setErrorHelper($errorHelper): self
     {
@@ -199,7 +199,7 @@ abstract class AbstractImporter
     /**
      * Import instance.
      *
-     * @return \Webkul\DataTransfer\Helpers\Source
+     * @return \Sharmindar\Core\DataTransfer\Helpers\Source
      */
     public function getSource()
     {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\EmailTemplate\Providers;
+namespace Sharmindar\Core\EmailTemplate\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\EmailTemplate\Models\EmailTemplate::class,
+        \Sharmindar\Core\EmailTemplate\Models\EmailTemplate::class,
     ];
 }

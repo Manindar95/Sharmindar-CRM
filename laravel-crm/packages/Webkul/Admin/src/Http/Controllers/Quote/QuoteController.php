@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Quote;
+namespace Sharmindar\Core\Admin\Http\Controllers\Quote;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Webkul\Admin\DataGrids\Quote\QuoteDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Admin\Http\Resources\QuoteResource;
-use Webkul\Core\Traits\PDFHandler;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Quote\Repositories\QuoteRepository;
+use Sharmindar\Core\Admin\DataGrids\Quote\QuoteDataGrid;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Requests\AttributeForm;
+use Sharmindar\Core\Admin\Http\Requests\MassDestroyRequest;
+use Sharmindar\Core\Admin\Http\Resources\QuoteResource;
+use Sharmindar\Core\Core\Traits\PDFHandler;
+use Sharmindar\Core\Lead\Repositories\LeadRepository;
+use Sharmindar\Core\Quote\Repositories\QuoteRepository;
 
 class QuoteController extends Controller
 {

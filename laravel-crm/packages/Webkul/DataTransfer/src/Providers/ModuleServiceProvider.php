@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\DataTransfer\Providers;
+namespace Sharmindar\Core\DataTransfer\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
@@ -12,7 +12,7 @@ class ModuleServiceProvider extends BaseModuleServiceProvider
      * @var array
      */
     protected $models = [
-        \Webkul\DataTransfer\Models\Import::class,
-        \Webkul\DataTransfer\Models\ImportBatch::class,
+        \Sharmindar\Core\DataTransfer\Models\Import::class,
+        \Sharmindar\Core\DataTransfer\Models\ImportBatch::class,
     ];
 }

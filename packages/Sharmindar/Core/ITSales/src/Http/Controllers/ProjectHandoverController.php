@@ -6,8 +6,8 @@ use Sharmindar\Core\ITSales\Models\Proposal;
 use Sharmindar\Core\ITSales\Models\ProjectHandover;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Lead\Models\Lead;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Lead\Models\Lead;
 
 class ProjectHandoverController extends Controller
 {
@@ -42,13 +42,13 @@ class ProjectHandoverController extends Controller
 
         $proposal = Proposal::findOrFail($validated['proposal_id']);
 
-        // Mock project creation if Webkul\Project doesn't exist or just create a placeholder logic
+        // Mock project creation if Sharmindar\Core\Project doesn't exist or just create a placeholder logic
         // For now, let's assume we just want to record the handover
 
         ProjectHandover::create([
             'lead_id' => $validated['lead_id'],
             'proposal_id' => $validated['proposal_id'],
-            'project_id' => null, // Project creation logic might need Webkul\Project package
+            'project_id' => null, // Project creation logic might need Sharmindar\Core\Project package
             'handover_status' => 'in_progress',
             'handover_notes' => $validated['handover_notes'] ?? null,
             'handed_over_by' => auth()->guard('user')->id(),

@@ -5,7 +5,7 @@ namespace Sharmindar\Core\ITSales\Http\Controllers;
 use Sharmindar\Core\ITSales\Models\Requirement;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Webkul\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
 
 class RequirementController extends Controller
 {

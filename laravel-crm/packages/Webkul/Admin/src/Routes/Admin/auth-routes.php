@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Controllers\User\ForgotPasswordController;
-use Webkul\Admin\Http\Controllers\User\ResetPasswordController;
-use Webkul\Admin\Http\Controllers\User\SessionController;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Controllers\User\ForgotPasswordController;
+use Sharmindar\Core\Admin\Http\Controllers\User\ResetPasswordController;
+use Sharmindar\Core\Admin\Http\Controllers\User\SessionController;
 
 Route::withoutMiddleware(['user'])->group(function () {
     /**

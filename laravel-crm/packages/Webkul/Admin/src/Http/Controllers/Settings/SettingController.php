@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace Sharmindar\Core\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Core\Menu\MenuItem;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Core\Menu\MenuItem;
 
 class SettingController extends Controller
 {

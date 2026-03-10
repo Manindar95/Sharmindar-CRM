@@ -1,18 +1,18 @@
 <?php
 
-namespace Webkul\Core\Providers;
+namespace Sharmindar\Core\Core\Providers;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Webkul\Core\Acl;
-use Webkul\Core\Console\Commands\Version;
-use Webkul\Core\Core;
-use Webkul\Core\Facades\Acl as AclFacade;
-use Webkul\Core\Facades\Core as CoreFacade;
-use Webkul\Core\Facades\Menu as MenuFacade;
-use Webkul\Core\Facades\SystemConfig as SystemConfigFacade;
-use Webkul\Core\Menu;
-use Webkul\Core\SystemConfig;
+use Sharmindar\Core\Core\Acl;
+use Sharmindar\Core\Core\Console\Commands\Version;
+use Sharmindar\Core\Core\Core;
+use Sharmindar\Core\Core\Facades\Acl as AclFacade;
+use Sharmindar\Core\Core\Facades\Core as CoreFacade;
+use Sharmindar\Core\Core\Facades\Menu as MenuFacade;
+use Sharmindar\Core\Core\Facades\SystemConfig as SystemConfigFacade;
+use Sharmindar\Core\Core\Menu;
+use Sharmindar\Core\Core\SystemConfig;
 
 class CoreServiceProvider extends ServiceProvider
 {

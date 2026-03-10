@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\User\Providers;
+namespace Sharmindar\Core\User\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core;
+namespace Sharmindar\Core\Core;
 
 use Illuminate\Support\Facades\Event;
 

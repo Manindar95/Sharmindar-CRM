@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Email\Repositories;
+namespace Sharmindar\Core\Email\Repositories;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Webklex\PHPIMAP\Attachment as ImapAttachment;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Email\Contracts\Attachment;
-use Webkul\Email\Contracts\Email;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\Email\Contracts\Attachment;
+use Sharmindar\Core\Email\Contracts\Email;
 
 class AttachmentRepository extends Repository
 {

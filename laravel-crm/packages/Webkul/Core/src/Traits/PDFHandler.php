@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Traits;
+namespace Sharmindar\Core\Core\Traits;
 
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Str;

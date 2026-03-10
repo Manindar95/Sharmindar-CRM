@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Core;
+namespace Sharmindar\Core\Core;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Webkul\Core\Menu\MenuItem;
+use Sharmindar\Core\Core\Menu\MenuItem;
 
 class Menu
 {

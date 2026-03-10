@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin;
+namespace Sharmindar\Core\Admin;
 
-use Webkul\User\Repositories\UserRepository;
+use Sharmindar\Core\User\Repositories\UserRepository;
 
 class Bouncer
 {

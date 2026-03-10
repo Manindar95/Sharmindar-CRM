@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Activity\Repositories;
+namespace Sharmindar\Core\Activity\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class FileRepository extends Repository
 {
@@ -13,6 +13,6 @@ class FileRepository extends Repository
      */
     public function model()
     {
-        return \Webkul\Activity\Contracts\File::class;
+        return \Sharmindar\Core\Activity\Contracts\File::class;
     }
 }

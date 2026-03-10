@@ -5,7 +5,7 @@ namespace Sharmindar\Core\ITSales\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Webkul\Lead\Models\Lead;
+use Sharmindar\Core\Lead\Models\Lead;
 
 class StaleLeadReminder extends Notification
 {

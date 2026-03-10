@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Core\Repositories;
+namespace Sharmindar\Core\Core\Repositories;
 
 use Prettus\Repository\Traits\CacheableRepository;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class CountryStateRepository extends Repository
 {
@@ -16,6 +16,6 @@ class CountryStateRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Core\Contracts\CountryState';
+        return 'Sharmindar\Core\Core\Contracts\CountryState';
     }
 }

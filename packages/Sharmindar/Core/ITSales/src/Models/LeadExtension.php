@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\ITSales\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Models\Lead;
+use Sharmindar\Core\Lead\Models\Lead;
 
 class LeadExtension extends Model
 {

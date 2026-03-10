@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Marketing\Repositories;
+namespace Sharmindar\Core\Marketing\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Marketing\Contracts\Campaign;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\Marketing\Contracts\Campaign;
 
 class CampaignRepository extends Repository
 {

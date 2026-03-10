@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\User\Repositories;
+namespace Sharmindar\Core\User\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class GroupRepository extends Repository
 {
@@ -13,6 +13,6 @@ class GroupRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\User\Contracts\Group';
+        return 'Sharmindar\Core\User\Contracts\Group';
     }
 }

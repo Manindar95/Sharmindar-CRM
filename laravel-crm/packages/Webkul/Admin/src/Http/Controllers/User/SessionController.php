@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\User;
+namespace Sharmindar\Core\Admin\Http\Controllers\User;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Core\Menu\MenuItem;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Core\Menu\MenuItem;
 
 class SessionController extends Controller
 {

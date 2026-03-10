@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Automation\Repositories;
+namespace Sharmindar\Core\Automation\Repositories;
 
-use Webkul\Automation\Contracts\Webhook;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Automation\Contracts\Webhook;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class WebhookRepository extends Repository
 {

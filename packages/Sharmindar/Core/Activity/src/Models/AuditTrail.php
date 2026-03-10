@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\Activity\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\User\Models\User;
+use Sharmindar\Core\User\Models\User;
 
 class AuditTrail extends Model
 {

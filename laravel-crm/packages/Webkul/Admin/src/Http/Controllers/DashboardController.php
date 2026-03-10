@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers;
+namespace Sharmindar\Core\Admin\Http\Controllers;
 
-use Webkul\Admin\Helpers\Dashboard;
+use Sharmindar\Core\Admin\Helpers\Dashboard;
 
 class DashboardController extends Controller
 {

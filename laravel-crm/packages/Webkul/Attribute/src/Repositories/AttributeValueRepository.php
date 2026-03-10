@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Attribute\Repositories;
+namespace Sharmindar\Core\Attribute\Repositories;
 
 use Carbon\Carbon;
 use Illuminate\Container\Container;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Webkul\Attribute\Contracts\AttributeValue;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Attribute\Contracts\AttributeValue;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class AttributeValueRepository extends Repository
 {
@@ -116,7 +116,7 @@ class AttributeValueRepository extends Repository
      *
      * @param  int  $entityId
      * @param  string  $entityType
-     * @param  \Webkul\Attribute\Contracts\Attribute  $attribute
+     * @param  \Sharmindar\Core\Attribute\Contracts\Attribute  $attribute
      * @param  string  $value
      * @return bool
      */

@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\User\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\User\Models\UserProxy;
+use Sharmindar\Core\User\Models\UserProxy;
 
 class UserMeta extends Model
 {

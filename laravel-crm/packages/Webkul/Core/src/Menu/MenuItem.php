@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Menu;
+namespace Sharmindar\Core\Core\Menu;
 
 use Illuminate\Support\Collection;
 

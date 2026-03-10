@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Activity\Repositories;
+namespace Sharmindar\Core\Activity\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class ActivityRepository extends Repository
 {
@@ -26,13 +26,13 @@ class ActivityRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Activity\Contracts\Activity';
+        return 'Sharmindar\Core\Activity\Contracts\Activity';
     }
 
     /**
      * Create pipeline.
      *
-     * @return \Webkul\Activity\Contracts\Activity
+     * @return \Sharmindar\Core\Activity\Contracts\Activity
      */
     public function create(array $data)
     {
@@ -70,7 +70,7 @@ class ActivityRepository extends Repository
      *
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\Activity\Contracts\Activity
+     * @return \Sharmindar\Core\Activity\Contracts\Activity
      */
     public function update(array $data, $id, $attribute = 'id')
     {

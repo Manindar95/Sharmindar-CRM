@@ -3,8 +3,8 @@
 namespace Sharmindar\Core\ITSales\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Models\Lead;
-use Webkul\User\Models\User;
+use Sharmindar\Core\Lead\Models\Lead;
+use Sharmindar\Core\User\Models\User;
 
 class Requirement extends Model
 {

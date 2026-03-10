@@ -1,19 +1,19 @@
 <?php
 
-namespace Webkul\DataTransfer\Helpers\Importers\Leads;
+namespace Sharmindar\Core\DataTransfer\Helpers\Importers\Leads;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Validator;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Contracts\Validations\Decimal;
-use Webkul\DataTransfer\Contracts\ImportBatch as ImportBatchContract;
-use Webkul\DataTransfer\Helpers\Import;
-use Webkul\DataTransfer\Helpers\Importers\AbstractImporter;
-use Webkul\DataTransfer\Repositories\ImportBatchRepository;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Lead\Repositories\ProductRepository as LeadProductRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Contracts\Validations\Decimal;
+use Sharmindar\Core\DataTransfer\Contracts\ImportBatch as ImportBatchContract;
+use Sharmindar\Core\DataTransfer\Helpers\Import;
+use Sharmindar\Core\DataTransfer\Helpers\Importers\AbstractImporter;
+use Sharmindar\Core\DataTransfer\Repositories\ImportBatchRepository;
+use Sharmindar\Core\Lead\Repositories\LeadRepository;
+use Sharmindar\Core\Lead\Repositories\ProductRepository as LeadProductRepository;
 
 class Importer extends AbstractImporter
 {

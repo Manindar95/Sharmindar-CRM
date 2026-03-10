@@ -1,26 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Settings\AttributeController;
-use Webkul\Admin\Http\Controllers\Settings\DataTransfer\ImportController;
-use Webkul\Admin\Http\Controllers\Settings\EmailTemplateController;
-use Webkul\Admin\Http\Controllers\Settings\GroupController;
-use Webkul\Admin\Http\Controllers\Settings\LocationController;
-use Webkul\Admin\Http\Controllers\Settings\Marketing\CampaignsController;
-use Webkul\Admin\Http\Controllers\Settings\Marketing\EventController;
-use Webkul\Admin\Http\Controllers\Settings\PipelineController;
-use Webkul\Admin\Http\Controllers\Settings\RoleController;
-use Webkul\Admin\Http\Controllers\Settings\SettingController;
-use Webkul\Admin\Http\Controllers\Settings\SourceController;
-use Webkul\Admin\Http\Controllers\Settings\TagController;
-use Webkul\Admin\Http\Controllers\Settings\TypeController;
-use Webkul\Admin\Http\Controllers\Settings\UserController;
-use Webkul\Admin\Http\Controllers\Settings\Warehouse\ActivityController;
-use Webkul\Admin\Http\Controllers\Settings\Warehouse\TagController as WarehouseTagController;
-use Webkul\Admin\Http\Controllers\Settings\Warehouse\WarehouseController;
-use Webkul\Admin\Http\Controllers\Settings\WebFormController;
-use Webkul\Admin\Http\Controllers\Settings\WebhookController;
-use Webkul\Admin\Http\Controllers\Settings\WorkflowController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\AttributeController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\DataTransfer\ImportController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\EmailTemplateController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\GroupController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\LocationController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\Marketing\CampaignsController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\Marketing\EventController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\PipelineController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\RoleController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\SettingController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\SourceController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\TagController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\TypeController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\UserController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\Warehouse\ActivityController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\Warehouse\TagController as WarehouseTagController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\Warehouse\WarehouseController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\WebFormController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\WebhookController;
+use Sharmindar\Core\Admin\Http\Controllers\Settings\WorkflowController;
 
 /**
  * Settings group routes.

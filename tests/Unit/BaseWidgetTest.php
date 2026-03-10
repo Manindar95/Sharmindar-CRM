@@ -1,6 +1,6 @@
 <?php
 
-use Company\Core\Dashboard\Widgets\BaseWidget;
+use Sharmindar\Core\Dashboard\Widgets\BaseWidget;
 
 /**
  * ---------------------------------------------------------------

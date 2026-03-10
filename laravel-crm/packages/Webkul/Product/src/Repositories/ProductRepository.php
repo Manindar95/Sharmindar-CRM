@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Product\Repositories;
+namespace Sharmindar\Core\Product\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Str;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Product\Contracts\Product;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\Product\Contracts\Product;
 
 class ProductRepository extends Repository
 {
@@ -47,7 +47,7 @@ class ProductRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Product\Contracts\Product
+     * @return \Sharmindar\Core\Product\Contracts\Product
      */
     public function create(array $data)
     {
@@ -65,7 +65,7 @@ class ProductRepository extends Repository
      *
      * @param  int  $id
      * @param  array  $attribute
-     * @return \Webkul\Product\Contracts\Product
+     * @return \Sharmindar\Core\Product\Contracts\Product
      */
     public function update(array $data, $id, $attributes = [])
     {

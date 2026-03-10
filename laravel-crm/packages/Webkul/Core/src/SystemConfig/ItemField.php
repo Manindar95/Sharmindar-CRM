@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\SystemConfig;
+namespace Sharmindar\Core\Core\SystemConfig;
 
 use Illuminate\Support\Str;
 

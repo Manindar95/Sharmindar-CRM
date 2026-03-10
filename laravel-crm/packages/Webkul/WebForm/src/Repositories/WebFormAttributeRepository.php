@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\WebForm\Repositories;
+namespace Sharmindar\Core\WebForm\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class WebFormAttributeRepository extends Repository
 {
@@ -13,6 +13,6 @@ class WebFormAttributeRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\WebForm\Contracts\WebFormAttribute';
+        return 'Sharmindar\Core\WebForm\Contracts\WebFormAttribute';
     }
 }

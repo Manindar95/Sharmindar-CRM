@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Console\Commands;
+namespace Sharmindar\Core\Core\Console\Commands;
 
 use Illuminate\Console\Command;
 

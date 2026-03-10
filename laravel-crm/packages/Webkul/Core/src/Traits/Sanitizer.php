@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Traits;
+namespace Sharmindar\Core\Core\Traits;
 
 use enshrined\svgSanitize\data\AllowedAttributes;
 use enshrined\svgSanitize\data\AllowedTags;

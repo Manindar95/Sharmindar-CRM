@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\DataTransfer\Repositories;
+namespace Sharmindar\Core\DataTransfer\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
-use Webkul\DataTransfer\Contracts\ImportBatch;
+use Sharmindar\Core\Core\Eloquent\Repository;
+use Sharmindar\Core\DataTransfer\Contracts\ImportBatch;
 
 class ImportBatchRepository extends Repository
 {

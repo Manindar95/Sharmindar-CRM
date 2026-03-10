@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Middleware;
+namespace Sharmindar\Core\Admin\Http\Middleware;
 
 use Closure;
 use Illuminate\Foundation\Application;

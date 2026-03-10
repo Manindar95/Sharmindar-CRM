@@ -3,7 +3,7 @@
 namespace Sharmindar\Core\Setting\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Webkul\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use PragmaRX\Google2FA\Google2FA;
 

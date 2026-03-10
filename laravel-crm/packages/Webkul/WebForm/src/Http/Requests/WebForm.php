@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\WebForm\Http\Requests;
+namespace Sharmindar\Core\WebForm\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Contracts\Validations\Decimal;
-use Webkul\WebForm\Rules\PhoneNumber;
+use Sharmindar\Core\Attribute\Repositories\AttributeRepository;
+use Sharmindar\Core\Attribute\Repositories\AttributeValueRepository;
+use Sharmindar\Core\Core\Contracts\Validations\Decimal;
+use Sharmindar\Core\WebForm\Rules\PhoneNumber;
 
 class WebForm extends FormRequest
 {

@@ -5,7 +5,7 @@ namespace Sharmindar\Core\User\DataGrids;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Webkul\DataGrid\DataGrid;
+use Sharmindar\Core\DataGrid\DataGrid;
 
 class EmployeeDataGrid extends DataGrid
 {

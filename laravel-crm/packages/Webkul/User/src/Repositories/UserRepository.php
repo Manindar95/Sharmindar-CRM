@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\User\Repositories;
+namespace Sharmindar\Core\User\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class UserRepository extends Repository
 {
@@ -24,7 +24,7 @@ class UserRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\User\Contracts\User';
+        return 'Sharmindar\Core\User\Contracts\User';
     }
 
     /**

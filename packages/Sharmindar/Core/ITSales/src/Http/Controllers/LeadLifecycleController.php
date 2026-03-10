@@ -2,14 +2,14 @@
 
 namespace Sharmindar\Core\ITSales\Http\Controllers;
 
-use Webkul\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
 use Sharmindar\Core\ITSales\Models\LeadLifecycleStatus;
 use Sharmindar\Core\ITSales\Models\LeadStatusTransition;
 use Sharmindar\Core\ITSales\Notifications\StaleLeadNotification;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Webkul\Lead\Models\Lead;
-use Webkul\User\Models\User;
+use Sharmindar\Core\Lead\Models\Lead;
+use Sharmindar\Core\User\Models\User;
 
 class LeadLifecycleController extends Controller
 {

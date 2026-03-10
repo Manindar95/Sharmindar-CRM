@@ -1,7 +1,7 @@
 <?php
 
-use Company\Core\Dashboard\Managers\DashboardManager;
-use Company\Core\Dashboard\Widgets\BaseWidget;
+use Sharmindar\Core\Dashboard\Managers\DashboardManager;
+use Sharmindar\Core\Dashboard\Widgets\BaseWidget;
 
 /**
  * ---------------------------------------------------------------

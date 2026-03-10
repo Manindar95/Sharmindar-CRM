@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Webkul\\Core\\": "src/"
+            "Sharmindar\Core\\Core\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\Core\\Providers\\CoreServiceProvider"
+                "Sharmindar\Core\\Core\\Providers\\CoreServiceProvider"
             ],
             "aliases": {}
         }

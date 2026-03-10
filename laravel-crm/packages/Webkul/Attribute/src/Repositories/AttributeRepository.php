@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Attribute\Repositories;
+namespace Sharmindar\Core\Attribute\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Str;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class AttributeRepository extends Repository
 {
@@ -27,11 +27,11 @@ class AttributeRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Attribute\Contracts\Attribute';
+        return 'Sharmindar\Core\Attribute\Contracts\Attribute';
     }
 
     /**
-     * @return \Webkul\Attribute\Contracts\Attribute
+     * @return \Sharmindar\Core\Attribute\Contracts\Attribute
      */
     public function create(array $data)
     {
@@ -56,7 +56,7 @@ class AttributeRepository extends Repository
     /**
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\Attribute\Contracts\Attribute
+     * @return \Sharmindar\Core\Attribute\Contracts\Attribute
      */
     public function update(array $data, $id, $attribute = 'id')
     {
@@ -95,7 +95,7 @@ class AttributeRepository extends Repository
 
     /**
      * @param  string  $code
-     * @return \Webkul\Attribute\Contracts\Attribute
+     * @return \Sharmindar\Core\Attribute\Contracts\Attribute
      */
     public function getAttributeByCode($code)
     {

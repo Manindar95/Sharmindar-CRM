@@ -3,8 +3,8 @@
 namespace Sharmindar\Core\Dashboard\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\User\Models\User;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\User\Models\User;
 
 class GlobalSearchController extends Controller
 {
@@ -38,7 +38,7 @@ class GlobalSearchController extends Controller
             return response()->json(['data' => []]);
         }
 
-        $projects = \Webkul\Admin\Models\Project::where('name', 'like', "%{$query}%")
+        $projects = \Sharmindar\Core\Admin\Models\Project::where('name', 'like', "%{$query}%")
             ->orWhere('description', 'like', "%{$query}%")
             ->limit(10)
             ->get(['id', 'name', 'description', 'status']);
@@ -57,7 +57,7 @@ class GlobalSearchController extends Controller
             return response()->json(['data' => []]);
         }
 
-        $tasks = \Webkul\Admin\Models\Task::where('title', 'like', "%{$query}%")
+        $tasks = \Sharmindar\Core\Admin\Models\Task::where('title', 'like', "%{$query}%")
             ->orWhere('description', 'like', "%{$query}%")
             ->limit(10)
             ->get(['id', 'title', 'description', 'status', 'priority']);
@@ -76,7 +76,7 @@ class GlobalSearchController extends Controller
             return response()->json(['data' => []]);
         }
 
-        $clients = \Webkul\Contact\Models\Organization::where('name', 'like', "%{$query}%")
+        $clients = \Sharmindar\Core\Contact\Models\Organization::where('name', 'like', "%{$query}%")
             ->orWhere('address', 'like', "%{$query}%")
             ->limit(10)
             ->get(['id', 'name', 'address']);

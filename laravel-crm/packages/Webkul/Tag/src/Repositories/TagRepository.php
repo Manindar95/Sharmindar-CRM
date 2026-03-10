@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Tag\Repositories;
+namespace Sharmindar\Core\Tag\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class TagRepository extends Repository
 {
@@ -22,6 +22,6 @@ class TagRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Tag\Contracts\Tag';
+        return 'Sharmindar\Core\Tag\Contracts\Tag';
     }
 }

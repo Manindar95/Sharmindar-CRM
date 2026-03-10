@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers;
+namespace Sharmindar\Core\Admin\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Webkul\Core\Traits\Sanitizer;
+use Sharmindar\Core\Core\Traits\Sanitizer;
 
 class TinyMCEController extends Controller
 {

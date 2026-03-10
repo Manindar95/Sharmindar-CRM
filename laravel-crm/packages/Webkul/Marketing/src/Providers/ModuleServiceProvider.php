@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Marketing\Providers;
+namespace Sharmindar\Core\Marketing\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
@@ -12,7 +12,7 @@ class ModuleServiceProvider extends BaseModuleServiceProvider
      * @var array
      */
     protected $models = [
-        \Webkul\Marketing\Models\Event::class,
-        \Webkul\Marketing\Models\Campaign::class,
+        \Sharmindar\Core\Marketing\Models\Event::class,
+        \Sharmindar\Core\Marketing\Models\Campaign::class,
     ];
 }

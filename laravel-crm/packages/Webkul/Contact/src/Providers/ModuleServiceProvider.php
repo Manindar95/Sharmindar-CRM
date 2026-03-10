@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Contact\Providers;
+namespace Sharmindar\Core\Contact\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Contact\Models\Person::class,
-        \Webkul\Contact\Models\Organization::class,
+        \Sharmindar\Core\Contact\Models\Person::class,
+        \Sharmindar\Core\Contact\Models\Organization::class,
     ];
 }

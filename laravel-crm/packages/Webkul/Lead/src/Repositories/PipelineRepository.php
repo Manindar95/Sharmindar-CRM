@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Lead\Repositories;
+namespace Sharmindar\Core\Lead\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Str;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class PipelineRepository extends Repository
 {
@@ -27,13 +27,13 @@ class PipelineRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Lead\Contracts\Pipeline';
+        return 'Sharmindar\Core\Lead\Contracts\Pipeline';
     }
 
     /**
      * Create pipeline.
      *
-     * @return \Webkul\Lead\Contracts\Pipeline
+     * @return \Sharmindar\Core\Lead\Contracts\Pipeline
      */
     public function create(array $data)
     {
@@ -57,7 +57,7 @@ class PipelineRepository extends Repository
      *
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\Lead\Contracts\Pipeline
+     * @return \Sharmindar\Core\Lead\Contracts\Pipeline
      */
     public function update(array $data, $id, $attribute = 'id')
     {
@@ -99,7 +99,7 @@ class PipelineRepository extends Repository
     /**
      * Return the default pipeline.
      *
-     * @return \Webkul\Lead\Contracts\Pipeline
+     * @return \Sharmindar\Core\Lead\Contracts\Pipeline
      */
     public function getDefaultPipeline()
     {

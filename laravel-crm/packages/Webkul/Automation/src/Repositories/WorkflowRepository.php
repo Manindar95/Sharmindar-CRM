@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Automation\Repositories;
+namespace Sharmindar\Core\Automation\Repositories;
 
-use Webkul\Automation\Contracts\Workflow;
-use Webkul\Core\Eloquent\Repository;
+use Sharmindar\Core\Automation\Contracts\Workflow;
+use Sharmindar\Core\Core\Eloquent\Repository;
 
 class WorkflowRepository extends Repository
 {

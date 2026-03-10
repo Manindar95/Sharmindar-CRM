@@ -4,7 +4,7 @@ namespace Sharmindar\Core\ITSales\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Webkul\User\Models\User;
+use Sharmindar\Core\User\Models\User;
 
 class Approval extends Model
 {

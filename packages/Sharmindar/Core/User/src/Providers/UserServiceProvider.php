@@ -12,11 +12,11 @@ class UserServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'company_user');
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
 
-        \Webkul\User\Models\User::resolveRelationUsing('employee_profile', function ($userModel) {
+        \Sharmindar\Core\User\Models\User::resolveRelationUsing('employee_profile', function ($userModel) {
             return $userModel->hasOne(\Sharmindar\Core\User\Models\EmployeeProfile::class , 'user_id');
         });
 
-        \Webkul\User\Models\User::resolveRelationUsing('meta', function ($userModel) {
+        \Sharmindar\Core\User\Models\User::resolveRelationUsing('meta', function ($userModel) {
             return $userModel->hasMany(\Sharmindar\Core\User\Models\UserMeta::class , 'user_id');
         });
     }

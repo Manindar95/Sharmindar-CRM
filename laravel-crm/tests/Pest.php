@@ -42,11 +42,11 @@ expect()->extend('toBeOne', function () {
 /**
  * Get default admin which is created on fresh instance.
  *
- * @return \Webkul\User\Models\User
+ * @return \Sharmindar\Core\User\Models\User
  */
 function getDefaultAdmin()
 {
-    $admin = \Webkul\User\Models\User::find(1);
+    $admin = \Sharmindar\Core\User\Models\User::find(1);
 
     return $admin;
 }
@@ -54,7 +54,7 @@ function getDefaultAdmin()
 /**
  * Sanctum authenticated admin.
  *
- * @return \Webkul\User\Models\User
+ * @return \Sharmindar\Core\User\Models\User
  */
 function actingAsSanctumAuthenticatedAdmin()
 {

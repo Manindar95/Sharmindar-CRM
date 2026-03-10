@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Core;
+namespace Sharmindar\Core\Core;
 
 use Illuminate\Support\Facades\Vite as BaseVite;
-use Webkul\Core\Exceptions\ViterNotFound;
+use Sharmindar\Core\Core\Exceptions\ViterNotFound;
 
 class Vite
 {

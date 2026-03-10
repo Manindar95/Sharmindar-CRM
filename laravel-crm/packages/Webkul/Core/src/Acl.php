@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Core;
+namespace Sharmindar\Core\Core;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Webkul\Core\Acl\AclItem;
+use Sharmindar\Core\Core\Acl\AclItem;
 
 class Acl
 {

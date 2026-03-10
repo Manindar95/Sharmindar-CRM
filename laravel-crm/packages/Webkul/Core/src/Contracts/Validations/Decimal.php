@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Contracts\Validations;
+namespace Sharmindar\Core\Core\Contracts\Validations;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;

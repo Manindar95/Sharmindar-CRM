@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Core;
+namespace Sharmindar\Core\Core;
 
 use Carbon\Carbon;
-use Webkul\Core\Repositories\CoreConfigRepository;
-use Webkul\Core\Repositories\CountryRepository;
-use Webkul\Core\Repositories\CountryStateRepository;
+use Sharmindar\Core\Core\Repositories\CoreConfigRepository;
+use Sharmindar\Core\Core\Repositories\CountryRepository;
+use Sharmindar\Core\Core\Repositories\CountryStateRepository;
 
 class Core
 {

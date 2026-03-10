@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Tag\Providers;
+namespace Sharmindar\Core\Tag\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Tag\Models\Tag::class,
+        \Sharmindar\Core\Tag\Models\Tag::class,
     ];
 }

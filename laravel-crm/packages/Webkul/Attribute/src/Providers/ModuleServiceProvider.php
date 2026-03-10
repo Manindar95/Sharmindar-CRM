@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Attribute\Providers;
+namespace Sharmindar\Core\Attribute\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use Sharmindar\Core\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Attribute\Models\Attribute::class,
-        \Webkul\Attribute\Models\AttributeOption::class,
-        \Webkul\Attribute\Models\AttributeValue::class,
+        \Sharmindar\Core\Attribute\Models\Attribute::class,
+        \Sharmindar\Core\Attribute\Models\AttributeOption::class,
+        \Sharmindar\Core\Attribute\Models\AttributeValue::class,
     ];
 }

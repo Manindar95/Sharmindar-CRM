@@ -1,15 +1,15 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Configuration;
+namespace Sharmindar\Core\Admin\Http\Controllers\Configuration;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\ConfigurationForm;
-use Webkul\Core\Repositories\CoreConfigRepository as ConfigurationRepository;
+use Sharmindar\Core\Admin\Http\Controllers\Controller;
+use Sharmindar\Core\Admin\Http\Requests\ConfigurationForm;
+use Sharmindar\Core\Core\Repositories\CoreConfigRepository as ConfigurationRepository;
 
 class ConfigurationController extends Controller
 {

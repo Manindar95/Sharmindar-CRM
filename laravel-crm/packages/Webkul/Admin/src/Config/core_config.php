@@ -26,7 +26,7 @@ return [
                 'title'   => 'admin::app.configuration.index.general.general.locale-settings.title',
                 'type'    => 'select',
                 'default' => 'en',
-                'options' => 'Webkul\Core\Core@locales',
+                'options' => 'Sharmindar\Core\Core\Core@locales',
             ],
         ],
     ], [
