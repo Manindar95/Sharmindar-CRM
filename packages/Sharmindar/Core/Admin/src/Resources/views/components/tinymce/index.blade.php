@@ -4,7 +4,7 @@
 
 @pushOnce('scripts')
     <!--
-        TODO (@devansh-webkul): Only this portion is pending; it just needs to be integrated using the Vite bundler. Currently,
+        TODO (@sharmindar-team): Only this portion is pending; it just needs to be integrated using the Vite bundler. Currently,
         there is an issue with relative paths in the plugins. I intend to address this task at the end.
     -->
     <script

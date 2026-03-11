@@ -42,7 +42,7 @@ class Core
 
     /**
      * Retrieve all currencies formatted for system config drop-downs.
-     * Webkul Core doesn't actually have a currencies() method, so we provide one.
+     * Sharmindar Core doesn't actually have a currencies() method, so we provide one.
      */
     public function currencies(): array
     {

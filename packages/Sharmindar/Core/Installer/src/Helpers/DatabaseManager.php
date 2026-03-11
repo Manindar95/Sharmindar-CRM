@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Sharmindar\Core\Installer\Database\Seeders\DatabaseSeeder as KrayinDatabaseSeeder;
+use Sharmindar\Core\Installer\Database\Seeders\DatabaseSeeder as SharmindarDatabaseSeeder;
 
 class DatabaseManager
 {
@@ -15,33 +15,34 @@ class DatabaseManager
      */
     public function isInstalled()
     {
-        if (! file_exists(base_path('.env'))) {
+        if (!file_exists(base_path('.env'))) {
             return false;
         }
 
         try {
             DB::connection()->getPDO();
 
-            $isConnected = (bool) DB::connection()->getDatabaseName();
+            $isConnected = (bool)DB::connection()->getDatabaseName();
 
-            if (! $isConnected) {
+            if (!$isConnected) {
                 return false;
             }
 
             $hasUserTable = Schema::hasTable('users');
 
-            if (! $hasUserTable) {
+            if (!$hasUserTable) {
                 return false;
             }
 
             $userCount = DB::table('users')->count();
 
-            if (! $userCount) {
+            if (!$userCount) {
                 return false;
             }
 
             return true;
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             return false;
         }
     }
@@ -60,7 +61,8 @@ class DatabaseManager
                 'success' => true,
                 'message' => 'Tables is migrated successfully.',
             ]);
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             return response()->json([
                 'error' => $e->getMessage(),
             ], 500);
@@ -75,13 +77,14 @@ class DatabaseManager
     public function seeder($data)
     {
         try {
-            app(KrayinDatabaseSeeder::class)->run([
-                'default_locale'     => $data['parameter']['default_locales'],
-                'default_currency'   => $data['parameter']['default_currency'],
+            app(SharmindarDatabaseSeeder::class)->run([
+                'default_locale' => $data['parameter']['default_locales'],
+                'default_currency' => $data['parameter']['default_currency'],
             ]);
 
             $this->storageLink();
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             return $e->getMessage();
         }
     }
@@ -101,7 +104,8 @@ class DatabaseManager
     {
         try {
             Artisan::call('key:generate');
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
         }
     }
 }

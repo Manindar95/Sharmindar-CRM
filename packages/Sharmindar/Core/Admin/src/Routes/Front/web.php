@@ -6,4 +6,4 @@ use Sharmindar\Core\Admin\Http\Controllers\Controller;
 /**
  * Home routes.
  */
-Route::get('/', [Controller::class, 'redirectToLogin'])->name('krayin.home');
+Route::get('/', [Controller::class, 'redirectToLogin'])->name('sharmindar.home');

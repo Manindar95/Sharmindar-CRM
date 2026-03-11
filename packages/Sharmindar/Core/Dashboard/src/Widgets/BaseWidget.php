@@ -73,7 +73,7 @@ abstract class BaseWidget implements Renderable
             return true;
         }
 
-        // Bouncer specific logic for Webkul CRM
+        // Bouncer specific logic for Sharmindar CRM
         foreach ($permissions as $permission) {
             if (bouncer()->hasPermission($permission)) {
                 return true;

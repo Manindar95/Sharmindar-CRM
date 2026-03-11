@@ -4,7 +4,7 @@
 
 # Sharmindar CRM
 
-**A CRM solution for IT and SaaS companies, built through Vibe Coding using the open-source [Krayin CRM](https://krayincrm.com) framework.**
+**A CRM solution for IT and SaaS companies, built through Vibe Coding using the open-source [Sharmindar CRM](https://krayincrm.com) framework.**
 
 Sharmindar CRM is a customized Customer Relationship Management system designed to streamline customer lifecycle management for IT and SaaS businesses. It is built on top of powerful open-source technologies including [Laravel](https://laravel.com) and [Vue.js](https://vuejs.org).
 
@@ -64,7 +64,7 @@ composer install
 4. Run the installer:
 
 ```bash
-php artisan krayin-crm:install
+php artisan sharmindar-crm:install
 ```
 
 5. Start the local development server:
@@ -94,4 +94,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgements
 
-Sharmindar CRM is inspired by and built upon the open-source [Krayin CRM](https://krayincrm.com) framework by [Webkul](https://webkul.com). Full credit to the Krayin team for the foundational CRM framework.
+Sharmindar CRM is inspired by and built upon the open-source [Sharmindar CRM](https://krayincrm.com) framework by the Sharmindar CRM Contributors. Full credit to the Sharmindar team for the foundational CRM framework.

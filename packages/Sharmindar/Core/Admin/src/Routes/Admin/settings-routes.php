@@ -30,8 +30,8 @@ Route::prefix('settings')->group(function () {
      * Account routes.
      */
     Route::controller(AccountController::class)->prefix('account')->group(function () {
-            Route::get('', 'edit')->name('admin.user.account.edit');
-            Route::put('', 'update')->name('admin.user.account.update');
+            Route::get('', 'edit')->name('admin.settings.account.edit');
+            Route::put('', 'update')->name('admin.settings.account.update');
         }
         );
 
@@ -417,4 +417,5 @@ Route::prefix('settings')->group(function () {
                 }
                 );
             }
-            );        });
+            );
+        });

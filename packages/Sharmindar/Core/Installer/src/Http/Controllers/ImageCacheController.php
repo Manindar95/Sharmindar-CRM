@@ -19,7 +19,7 @@ class ImageCacheController
      *
      * @var string
      */
-    const KRAYIN_LOGO = 'https://updates.krayincrm.com/krayin.png';
+    const SHARMINDAR_LOGO = 'https://updates.sharmindarcrm.com/sharmindar.png';
 
     /**
      * Get HTTP response of template applied image file
@@ -30,10 +30,11 @@ class ImageCacheController
     public function getImage($filename)
     {
         try {
-            $content = Cache::remember('krayin-logo', 10080, function () {
-                return $this->getImageFromUrl(self::KRAYIN_LOGO);
+            $content = Cache::remember('sharmindar-logo', 10080, function () {
+                return $this->getImageFromUrl(self::SHARMINDAR_LOGO);
             });
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
             $content = '';
         }
 
@@ -52,10 +53,10 @@ class ImageCacheController
 
         $options = [
             'http' => [
-                'method'           => 'GET',
+                'method' => 'GET',
                 'protocol_version' => 1.1, // force use HTTP 1.1 for service mesh environment with envoy
-                'header'           => "Accept-language: en\r\n".
-                "Domain: $domain\r\n".
+                'header' => "Accept-language: en\r\n" .
+                "Domain: $domain\r\n" .
                 "User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36\r\n",
             ],
         ];
@@ -67,8 +68,8 @@ class ImageCacheController
         }
 
         throw new \Exception(
-            'Unable to init from given url ('.$url.').'
-        );
+            'Unable to init from given url (' . $url . ').'
+            );
     }
 
     /**
@@ -99,10 +100,10 @@ class ImageCacheController
          * Return http response
          */
         return new IlluminateResponse($content, $statusCode, [
-            'Content-Type'   => $mime,
-            'Cache-Control'  => 'max-age=10080, public',
+            'Content-Type' => $mime,
+            'Cache-Control' => 'max-age=10080, public',
             'Content-Length' => strlen($content),
-            'Etag'           => $eTag,
+            'Etag' => $eTag,
         ]);
     }
 }

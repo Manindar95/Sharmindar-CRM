@@ -35,7 +35,7 @@ class InstallerServiceProvider extends ServiceProvider
 
         $router->aliasMiddleware('installer_locale', Locale::class);
 
-        Event::listen('krayin.installed', 'Sharmindar\Core\Installer\Listeners\Installer@installed');
+        Event::listen('sharmindar.installed', 'Sharmindar\Core\Installer\Listeners\Installer@installed');
 
         $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'installer');
 

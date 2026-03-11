@@ -129,8 +129,8 @@
                     <div class="m-auto grid h-[100vh] max-w-[362px] items-end">
                         <div class="grid gap-4">
                             <img
-                                src="{{ vite()->asset('images/krayin-logo.svg', 'installer') }}"
-                                alt="@lang('installer::app.installer.index.krayin-logo')"
+                                src="{{ vite()->asset('images/sharmindar-logo.svg', 'installer') }}"
+                                alt="@lang('installer::app.installer.index.sharmindar-logo')"
                             >
 
                             <div class="grid gap-1.5">
@@ -256,20 +256,20 @@
                         <p class="mb-6 w-full place-self-end text-left">
                             <a
                                 class="bg-white text-brandColor underline"
-                                href="https://krayincrm.com/"
+                                href="#"
                                 target="_blank"
                             >
-                                @lang('installer::app.installer.index.krayin')
+                                @lang('installer::app.installer.index.sharmindar')
                             </a>
 
-                            <span>@lang('installer::app.installer.index.krayin-info')</span>
+                            <span>@lang('installer::app.installer.index.sharmindar-info')</span>
 
                             <a
                                 class="bg-white text-brandColor underline"
-                                href="https://webkul.com/"
+                                href="https://sharmindarcrm.com/"
                                 target="_blank"
                             >
-                                @lang('installer::app.installer.index.webkul')
+                                @lang('installer::app.installer.index.sharmindar-team')
                             </a>
                         </p>
                     </div>
@@ -679,7 +679,7 @@
                     <div class="flex h-[484px] flex-col justify-center gap-4 overflow-y-auto px-7 py-4">
                         <div class="flex flex-col gap-4">
                             <p class="text-lg font-bold text-gray-800">
-                                @lang('installer::app.installer.index.installation-processing.krayin')
+                                @lang('installer::app.installer.index.installation-processing.sharmindar')
                             </p>
 
                             <div class="grid gap-2.5">
@@ -691,7 +691,7 @@
                                 />
 
                                 <p class="text-sm text-gray-600">
-                                    @lang('installer::app.installer.index.installation-processing.krayin-info')
+                                    @lang('installer::app.installer.index.installation-processing.sharmindar-info')
                                 </p>
                             </div>
                         </div>
@@ -728,10 +728,10 @@
                                     <x-installer::form.control-group.control
                                         type="text"
                                         name="app_name"
-                                        ::value="envData.app_name ?? 'Krayin'"
+                                        ::value="envData.app_name ?? 'Sharmindar'"
                                         rules="required"
                                         :label="trans('installer::app.installer.index.environment-configuration.application-name')"
-                                        :placeholder="trans('installer::app.installer.index.environment-configuration.krayin')"
+                                        :placeholder="trans('installer::app.installer.index.environment-configuration.sharmindar')"
                                     />
 
                                     <x-installer::form.control-group.error control-name="app_name" />
@@ -906,7 +906,7 @@
                                         rules="required"
                                         value="Admin"
                                         :label="trans('installer::app.installer.index.create-administrator.admin')"
-                                        :placeholder="trans('installer::app.installer.index.create-administrator.krayin')"
+                                        :placeholder="trans('installer::app.installer.index.create-administrator.sharmindar')"
                                     />
 
                                     <x-installer::form.control-group.error control-name="admin" />
@@ -1020,17 +1020,17 @@
 
                     <div class="flex items-center justify-between px-4 py-2.5">
                         <a
-                            href="https://forums.krayincrm.com/"
+                            href="#"
                             class="cursor-pointer text-xs font-semibold text-brandColor"
                         >
-                            @lang('installer::app.installer.index.installation-completed.krayin-forums')
+                            @lang('installer::app.installer.index.installation-completed.sharmindar-forums')
                         </a>
 
                         <a
-                            href="https://krayincrm.com/extensions/"
+                            href="#"
                             class="cursor-pointer rounded-md border border-brandColor bg-white px-3 py-1.5 font-semibold text-brandColor hover:opacity-90"
                         >
-                            @lang('installer::app.installer.index.installation-completed.explore-krayin-extensions')
+                            @lang('installer::app.installer.index.installation-completed.explore-sharmindar-extensions')
                         </a>
                     </div>
                 </div>
@@ -1096,7 +1096,7 @@
 
                                         this.envData = { ...this.envData, ...params };
                                     } else {
-                                        setErrors({ 'db_connection': ["Krayin currently supports MySQL only."] });
+                                        setErrors({ 'db_connection': ["Sharmindar currently supports MySQL only."] });
                                     }
                                 },
 

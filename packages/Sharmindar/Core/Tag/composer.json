@@ -1,15 +1,15 @@
 {
-    "name": "krayin/laravel-tag",
+    "name": "sharmindar/laravel-tag",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jitendra Singh",
-            "email": "jitendra@webkul.com"
+            "name": "Sharmindar Team",
+            "email": "admin@sharmindarcrm.com"
         }
     ],
     "require": {
-        "krayin/laravel-core": "^1.0",
-        "krayin/laravel-user": "^1.0"
+        "sharmindar/laravel-core": "^1.0",
+        "sharmindar/laravel-user": "^1.0"
     },
     "autoload": {
         "psr-4": {

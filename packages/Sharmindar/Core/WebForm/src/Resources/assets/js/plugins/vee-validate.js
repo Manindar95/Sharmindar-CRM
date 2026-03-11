@@ -107,13 +107,13 @@ export default {
         defineRule("", () => true);
 
         // @TODO handle this
-        // @suraj-webkul
+        // @sharmindar-team
         defineRule("date_format", (value) => {
             return true;
         });
 
         // @TODO handle this
-        // @suraj-webkul
+        // @sharmindar-team
         defineRule("after", (value) => {
             return true;
         });

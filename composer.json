@@ -1,7 +1,7 @@
 {
-    "name": "krayin/laravel-crm",
+    "name": "sharmindar/laravel-crm",
     "type": "project",
-    "description": "Krayin CRM",
+    "description": "Sharmindar CRM",
     "keywords": [
         "framework",
         "laravel"
@@ -12,7 +12,7 @@
         "barryvdh/laravel-dompdf": "^2.0.0",
         "diglactic/laravel-breadcrumbs": "^8.0",
         "doctrine/dbal": "^3.0",
-        "enshrined/svg-sanitize": "^0.21.0",
+        "enshrined/svg-sanitize": "^0.22.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "khaled.alshamaa/ar-php": "^6.3",
         "konekt/concord": "^1.10",
@@ -30,7 +30,6 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
         "fakerphp/faker": "^1.9.1",
-        "krayin/krayin-package-generator": "dev-master",
         "laravel/pint": "^1.16",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",

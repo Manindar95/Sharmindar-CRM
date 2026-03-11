@@ -330,7 +330,7 @@ return [
         ],
         'layouts' => [
             'powered-by' => [
-                'description' => 'توسعه یافته توسط :krayin، یک پروژه متن باز از :webkul.',
+                'description' => 'توسعه یافته توسط :sharmindar، یک پروژه متن باز از :sharmindar_team.',
             ],
             'header' => [
                 'mega-search' => [

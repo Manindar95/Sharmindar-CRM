@@ -14,7 +14,7 @@ class Vite
      */
     public function asset(string $filename, string $namespace = 'admin')
     {
-        $viters = config('krayin-vite.viters');
+        $viters = config('sharmindar-vite.viters');
 
         if (empty($viters[$namespace])) {
             throw new ViterNotFound($namespace);
@@ -30,13 +30,13 @@ class Vite
     }
 
     /**
-     * Set krayin vite.
+     * Set sharmindar vite.
      *
      * @return mixed
      */
     public function set(mixed $entryPoints, string $namespace = 'admin')
     {
-        $viters = config('krayin-vite.viters');
+        $viters = config('sharmindar-vite.viters');
 
         if (empty($viters[$namespace])) {
             throw new ViterNotFound($namespace);

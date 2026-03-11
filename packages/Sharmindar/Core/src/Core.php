@@ -10,31 +10,33 @@ use Sharmindar\Core\Repositories\CountryStateRepository;
 class Core
 {
     /**
-     * The Krayin version.
+     * The Sharmindar version.
      *
      * @var string
      */
-    const KRAYIN_VERSION = '2.1.6';
+    const SHARMINDAR_VERSION = '2.1.6';
 
     /**
      * Create a new instance.
      *
      * @return void
      */
-    public function __construct(
-        protected CountryRepository $countryRepository,
-        protected CoreConfigRepository $coreConfigRepository,
-        protected CountryStateRepository $countryStateRepository
-    ) {}
+    public function __construct(protected
+        CountryRepository $countryRepository, protected
+        CoreConfigRepository $coreConfigRepository, protected
+        CountryStateRepository $countryStateRepository
+        )
+    {
+    }
 
     /**
-     * Get the version number of the Krayin.
+     * Get the version number of the Sharmindar.
      *
      * @return string
      */
     public function version()
     {
-        return static::KRAYIN_VERSION;
+        return static::SHARMINDAR_VERSION;
     }
 
     /**
@@ -135,12 +137,13 @@ class Core
 
         $collection = $this->countryStateRepository->findByField([
             'country_code' => $countryCode,
-            'code'         => $stateCode,
+            'code' => $stateCode,
         ]);
 
         if (count($collection)) {
             return $collection->first();
-        } else {
+        }
+        else {
             return false;
         }
     }
@@ -183,11 +186,12 @@ class Core
     {
         $ts = strtotime($date);
 
-        if (! $day) {
+        if (!$day) {
             $start = (date('D', $ts) == 'Sun') ? $ts : strtotime('last sunday', $ts);
 
             return date('Y-m-d', $start);
-        } else {
+        }
+        else {
             $end = (date('D', $ts) == 'Sat') ? $ts : strtotime('next saturday', $ts);
 
             return date('Y-m-d', $end);
@@ -202,7 +206,7 @@ class Core
      */
     public function currencySymbol($code)
     {
-        $formatter = new \NumberFormatter(app()->getLocale().'@currency='.$code, \NumberFormatter::CURRENCY);
+        $formatter = new \NumberFormatter(app()->getLocale() . '@currency=' . $code, \NumberFormatter::CURRENCY);
 
         return $formatter->getSymbol(\NumberFormatter::CURRENCY_SYMBOL);
     }

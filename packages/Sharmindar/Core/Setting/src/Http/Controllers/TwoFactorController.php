@@ -53,7 +53,7 @@ class TwoFactorController extends Controller
             auth()->guard('user')->login($user, session('2fa:user:remember', false));
 
             session()->flash('success', 'Two-Factor Authentication verified successfully.');
-            // Proceed to standard Webkul login routing flow mapping
+            // Proceed to standard Sharmindar login routing flow mapping
             return redirect()->route('admin.dashboard.index');
         }
 
